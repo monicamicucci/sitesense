@@ -6,11 +6,20 @@ __pycache__/
 venv/
 env/
 .venv/
+<<<<<<< HEAD
 # node_modules/
 
 # Build e Dist
 # dist/
 # build/ File sensibili (IMPORTANTE: non caricare mai le chiavi segrete)
+=======
+
+
+# Build e Dist
+
+
+# File sensibili (IMPORTANTE: non caricare mai le chiavi segrete)
+>>>>>>> b9babe168a709dd9cd229a5dcb8d7460fa20be49
 .env
 *.env
 
