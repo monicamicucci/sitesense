@@ -9,8 +9,7 @@ env/
 node_modules/
 
 # Build e Dist
-dist/
-build/
+
 
 # File sensibili (IMPORTANTE: non caricare mai le chiavi segrete)
 .env
