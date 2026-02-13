@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/ai-loading.css">
+  <script src="/static/script.js" defer></script>
+
+  <title>Area Riservata</title>
+
+  <style>
+    :root {
+      --bg: #eaf7f1;
+      --text: #0f3e34;
+      --muted: #4b635c;
+      --sidebar-width: 96px;
+      --page-padding: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ================= LAYOUT ================= */
+    .layout {
+      min-height: 100vh;
+      padding-left: var(--sidebar-width);
+    }
+
+    /* ================= SIDEBAR ================= */
+    #left-sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--sidebar-width);
+      background: #0b2c26;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      z-index: 50;
+    }
+
+    /* ================= CONTENT ================= */
+    .content {
+      padding: var(--page-padding);
+      width: 100%;
+    }
+
+    /* ================= INTRO ================= */
+    .brand img {
+      height: 28px;
+      margin-bottom: 24px;
+    }
+
+    .intro h1 {
+      font-size: 48px;
+      font-weight: 800;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+
+    .intro p {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.12);
+    }
+
+    .hero img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ================= LIST ================= */
+    .list h2 {
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      margin: 32px auto;
+    }
+
+    /* ================= CARDS GRID ================= */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .city-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .city-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .city-photo {
+      width: 100%;
+      height: 200px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,.10);
+      background: #fff;
+    }
+
+    .city-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ================= TABLET ================= */
+    @media (max-width: 1024px) {
+      .intro h1 { font-size: 36px; }
+      .hero img { height: 220px; }
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      /* Trasforma sidebar in barra inferiore */
+      #left-sidebar {
+        display: flex !important;
+        flex-direction: row;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 70px;
+        padding: 0 24px;
+        justify-content: center;
+        gap: 32px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      
+      /* Resetta stili dei wrapper interni per il layout orizzontale */
+      #left-sidebar > div {
+        width: auto !important;
+        margin: 0 !important;
+      }
+      
+      /* Menu Panel (apertura verso l'alto dalla bottom bar) */
+      #sidebar-menu-panel {
+        top: auto !important;
+        bottom: 70px !important;
+        left: 20px !important;
+      }
+
+      /* Icona Omino: Posizionamento fisso in alto a destra */
+      #profile-button-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 60;
+        background: #0b2c26;
+        border-radius: 50%;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        width: 48px !important;
+        height: 48px !important;
+      }
+
+      /* Menu Profilo: Posizionamento sotto l'icona omino */
+      #profile-menu-panel {
+        position: fixed !important;
+        top: 80px !important;
+        right: 20px !important;
+        left: auto !important;
+        bottom: auto !important;
+        z-index: 61 !important;
+      }
+
+      .layout {
+        padding-left: 0;
+        padding-bottom: 90px; /* Spazio per la barra inferiore */
+      }
+      .content { padding: 16px; }
+      .intro h1 { font-size: 28px; }
+      .hero img { height: 180px; }
+    }
+
+    /* ================= SMALL MOBILE (558px) ================= */
+    @media (max-width: 558px) {
+      /* Sposta il tasto "+" (Nuova ricerca) a destra */
+      #add-btn-container {
+        position: fixed !important;
+        left: auto !important;
+        right: 20px !important;
+        bottom: 15px !important;
+        width: auto !important;
+        margin: 0 !important;
+        z-index: 60 !important;
+      }
+
+      /* Stile per il bottone spostato nel body da script.js */
+      body > #profile-button {
+        position: absolute !important;
+        top: 10px !important;
+        right: 20px !important;
+        z-index: 60 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        width: 48px !important;
+        height: 48px !important;
+      }
+      
+      /* Nascondi il container vuoto nella sidebar */
+      #profile-button-container {
+        display: none !important;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .city-photo {
+        height: 120px;
+      }
+      .city-title {
+        font-size: 14px;
+      }
+      .intro h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+ <aside id="left-sidebar"
+      class="fixed left-0 top-0 z-50 h-screen w-24 bg-[#0b2c26] flex flex-col items-center justify-between py-4">
+      <!-- Spazio icona menu (icona nascosta per mantenere layout) -->
+      <div class="w-full flex items-center justify-center">
+         <button id="sidebar-menu-btn" class="rounded-md w-10 h-10 flex items-center justify-center hover:bg-white/10" aria-label="Menu">
+           <span class="material-icons text-white invisible">menu</span>
+         </button>
+         <div id="sidebar-menu-panel" class="absolute top-14 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-28 z-50" style="display:none;">
+           <a href="/login_super_admin" class="block px-3 py-2 text-sm"
+              style="background-color:#16a34a;color:white;border-radius:6px;margin:6px;display:block;text-align:center;">
+              Area Super Admin
+           </a>
+         </div>
+      </div>
+      <!-- Gruppo icone centrali -->
+      <!-- Pulsante "+" per tornare alla pagina di ricerca -->
+      <div id="add-btn-container" class="w-full flex items-center justify-center mt-auto mb-6">
+        <a href="/" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10" aria-label="Nuova ricerca" title="Nuova ricerca">
+          <span class="material-icons text-white">add</span>
+        </a>
+      </div>
+
+      <!-- Icona profilo in basso -->
+      <div id="profile-button-container" class="w-full flex items-center justify-center">
+        <button id="profile-button"
+          class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10">
+          <img src="{{ user and user.profile_image or '/assets/user-variant1.png' }}"
+            class="w-8 h-8 rounded-full" />
+        </button>
+      </div>
+
+      <!-- Pannello menu profilo in verde scuro -->
+      <div id="profile-menu-panel"
+        class="absolute bottom-16 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-64 z-50"
+        style="display:none;">
+        {% if request.cookies.get('auth') == '1' %}
+        <div class="px-3 pt-3 pb-2 border-b border-white/10">
+          <div class="text-sm font-semibold">{{ user and user.name or '' }}</div>
+          <div class="text-xs text-white/70 truncate">{{ user and user.email or '' }}</div>
+        </div>
+        <a href="/profile" class="block px-3 py-2 text-sm hover:bg-[#145a4c]">Modifica profilo</a>
+        <a href="/logout?next=/" class="block px-3 py-2 text-sm hover:bg-[#145a4c]">Logout</a>
+        {% else %}
+        <a href="/login?next=/area_riservata" class="block px-3 py-2 text-sm">Login</a>
+        {% endif %}
+      </div>
+    </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="content">
+    {% if view == 'profile' %}
+        {% include 'partials/profile_content.html' %}
+    {% else %}
+
+    
+     
+    
+
+    <section class="intro">
+      <div class="flex items-center justify-center">
+        <img src="/assets/logo.png" alt="initalya"  style="width: 70px;">
+      </div>
+       
+
+      <h1>{{ greeting }} {{ user.name | default('', true) }}!</h1>
+      <p>Qui puoi gestire i tuoi programmi di viaggio.</p>
+
+      <figure class="hero">
+        <img src="https://www.dire.it/wp-content/uploads/2023/05/turismo-italia.jpg">
+      </figure>
+    </section>
+
+    <section class="list">
+      <h2>Lista programmi di viaggio</h2>
+
+      <div class="cards">
+        {% for program in programs %}
+        <div class="city-card">
+          <h3 class="city-title">{{ program.city_name }}</h3>
+          <a class="city-photo" href="/program/{{ program.program_id }}">
+            <img src="{{ program.city_photo }}">
+          </a>
+          <p>Numero locali: {{ program.num_locali }}</p>
+          <div class="mt-2">
+          <button class="btn-delete-program inline-flex items-center gap-2 px-3 py-2 rounded-md text-white hover:bg-red-700 text-sm bg-[#0f3e34]"
+                  data-program-id="{{ program.program_id }}">
+                 
+            <span class="material-icons text-white text-base">delete</span>
+            Elimina
+          </button>
+        </div>
+        </div>
+        {% else %}
+        <p>Nessun programma salvato.</p>
+        {% endfor %}
+      </div>
+    </section>
+   {% endif %}
+  </main>
+</div>
+ <div id="delete-confirm-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50" style="display:none;">
+    <div class="bg-white rounded-lg p-5 w-full max-w-sm shadow-xl">
+      <h3 class="text-lg font-semibold text-slate-900 mb-2">Sei sicuro di voler eliminare?</h3>
+      <p class="text-slate-600 mb-4">Questa azione non può essere annullata.</p>
+      <div class="flex justify-end gap-2">
+        <button id="cancel-delete-btn" class="px-3 py-2 rounded-md bg-slate-200 text-slate-800 hover:bg-slate-300">No</button>
+        <button id="confirm-delete-btn" class="px-3 py-2 rounded-md bg-red-600 text-white hover:bg-red-700">Sì</button>
+      </div>
+    </div>
+  </div>
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+(function () {
+  const menuBtn = document.getElementById('sidebar-menu-btn');
+  const menuPanel = document.getElementById('sidebar-menu-panel');
+
+  const profileBtn = document.getElementById('profile-button');
+  const profilePanel = document.getElementById('profile-menu-panel');
+
+  if (menuBtn && menuPanel) {
+    menuBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      menuPanel.style.display =
+        menuPanel.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  if (profileBtn && profilePanel) {
+    profileBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      profilePanel.style.display =
+        profilePanel.style.display === 'block' ? 'none' : 'block';
+    });
+  }
+
+  document.addEventListener('click', () => {
+    if (menuPanel) menuPanel.style.display = 'none';
+    if (profilePanel) profilePanel.style.display = 'none';
+  });
+})();
+</script>
+
+</body>
+</html>

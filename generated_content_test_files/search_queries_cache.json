@@ -1,0 +1,12 @@
+{
+    "localita": "Bari",
+    "queries": {
+        "Vini": [
+            "Vini Bari",
+            "Enoteca Bari"
+        ],
+        "Cucina Tipica": "Cucina Tipica Bari",
+        "Dolci Tipici": "Dolci Tipici Bari",
+        "Hotel": "Hotel Bari"
+    }
+}

@@ -1,0 +1,14 @@
+CREATE TABLE photo(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    city_id INT NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    titolo VARCHAR(255) NOT NULL,
+
+    FOREIGN KEY (city_id) REFERENCES cities(id) ON DELETE CASCADE
+);
+
+
+
+
+
+

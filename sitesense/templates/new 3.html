@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect" />
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900"
+    onload="this.rel='stylesheet'" rel="stylesheet" />
+
+  <title>SiteSense - Your Travel Companion</title>
+
+  <link rel="icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="/static/ai-loading.css" />
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}" defer></script>
+
+  <style>
+    html { scroll-behavior: auto !important; }
+
+    body {
+      font-family: "Work Sans", "Noto Sans", sans-serif;
+      background-image: url("inytalia.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* Overlay per migliorare leggibilità */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 62, 52, 0.85);
+      z-index: -1;
+    }
+
+    .material-icons {
+      font-family: "Material Icons";
+      font-size: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .activities-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .activities-grid { grid-template-columns: 1fr; }
+    }
+
+    .selection-card-link {
+      color: #0f3e34;
+    }
+    .selection-card-link:hover {
+      color: #0b2c26;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body class="text-slate-800">
+
+  <!-- SIDEBAR -->
+  <aside class="fixed left-0 top-0 z-50 h-screen w-24 bg-[#0b2c26] flex flex-col items-center justify-between py-4">
+    <button class="w-10 h-10 flex items-center justify-center hover:bg-white/10 rounded-md">
+      <span class="material-icons text-white">menu</span>
+    </button>
+    <button class="w-12 h-12 rounded-full hover:bg-white/10">
+      <img src="/assets/user-variant1.png" class="w-8 h-8 mx-auto" />
+    </button>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="pl-24 min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-40">
+      <div class="px-6 py-4">
+        <img src="/assets/logo.png" class="h-10" />
+      </div>
+    </header>
+
+    <main class="flex-1">
+
+      <!-- HERO -->
+      <section class="min-h-[85vh] flex items-center justify-center text-center px-4">
+        <div class="max-w-xl">
+          <img src="/assets/logo.png" class="mx-auto h-10 mb-4">
+          <h2 class="text-[#b8f36d] text-2xl font-semibold mb-2">
+            Lorem ipsum dolor sit
+          </h2>
+          <p class="text-slate-100 text-sm mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+
+          <form class="w-full">
+            <div class="flex items-center bg-white rounded-full h-14 px-4 shadow">
+              <span class="material-icons text-slate-400">search</span>
+              <input class="flex-1 bg-transparent outline-none px-2"
+                placeholder="Dove vuoi andare?">
+              <button class="w-10 h-10 rounded-full bg-[#b8f36d] text-[#0f3e34] flex items-center justify-center">
+                <span class="material-icons">send</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- QUI RESTA TUTTO IL TUO RESTO DI CONTENUTO (RISULTATI, MAPPA, CHAT ecc.)
+           NON HO TOCCATO STRUTTURA O ID -->
+
+    </main>
+
+    <footer class="py-6 text-center text-slate-300 text-sm">
+      © 2024 SiteSense. All rights reserved.
+    </footer>
+
+  </div>
+
+  <script src="/static/script.js?v=20251124-2" defer></script>
+</body>
+</html>

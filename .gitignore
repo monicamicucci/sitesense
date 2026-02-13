@@ -1,0 +1,31 @@
+# File compilati e cache
+__pycache__/
+*.pyc
+
+# Ambienti virtuali e dipendenze
+venv/
+env/
+.venv/
+node_modules/
+
+# Build e Dist
+dist/
+build/
+
+# File sensibili (IMPORTANTE: non caricare mai le chiavi segrete)
+.env
+*.env
+
+# File pesanti o di log
+*.log
+*.rar
+*.zip
+server.log
+sitesense.rar
+sitesense/dashboard.rar
+sitesense/dashboard.zip
+
+# Cartelle IDE
+.vscode/
+.idea/
+.trae/

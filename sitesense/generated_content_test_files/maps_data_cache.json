@@ -1,0 +1,22 @@
+{
+    "cucina_tipica": {
+        "results": []
+    },
+    "vini": {
+        "results": []
+    },
+    "hotel": {
+        "results": []
+    },
+    "_meta": {
+        "categories": 3,
+        "per_category_results": {
+            "cucina_tipica": 0,
+            "vini": 0,
+            "hotel": 0
+        },
+        "findplace_calls": 6,
+        "details_calls": 0,
+        "total_calls": 6
+    }
+}

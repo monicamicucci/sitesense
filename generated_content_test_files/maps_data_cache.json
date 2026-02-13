@@ -1,0 +1,26 @@
+{
+    "Cucina Tipica": {
+        "results": []
+    },
+    "Vini": {
+        "results": []
+    },
+    "Dolci Tipici": {
+        "results": []
+    },
+    "Hotel": {
+        "results": []
+    },
+    "_meta": {
+        "categories": 4,
+        "per_category_results": {
+            "Cucina Tipica": 0,
+            "Vini": 0,
+            "Dolci Tipici": 0,
+            "Hotel": 0
+        },
+        "findplace_calls": 26,
+        "details_calls": 0,
+        "total_calls": 26
+    }
+}

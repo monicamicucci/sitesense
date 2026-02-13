@@ -1,0 +1,97 @@
+[
+  {
+    "place_id": "ChIJuZCNipTLRxMRrdLmxvmYeNY",
+    "name": "Nicolaus Hotel Bari",
+    "formatted_address": "Via Cardinale Agostino Ciasca, 27, 70124 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN3kutzdJlR4na8Sj5EQL6QANHq0F2jyAV3ElAG79oVyBGEaxFJx1mbONYelV1I6M3-CiL8NhdHK3zhIsUQB-ipYIO024eNnLlyuijn2KTamSp6ChJ7ULRql-J_KvvN579Yxp_bmNZWnNCsMUAcrJJnXiCISRSW_j-sYF-4kdsjpP3l4YyV3EuGshWb_Wb4sno2GWkCqf42O5D5x4qtcpKAuBZNUVudf4g1E3-uTJjdhiYsq6bceEkLItwQry4gljqfpNNozO-Js059R2xvR6KuJmhwz-3hWJ7zkB8LhtbAUKg&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 5.0,
+    "reviews_count": 1000
+  },
+  {
+    "place_id": "ChIJOT_SyZjxRxMRW2Pxnr_rD6Q",
+    "name": "Mercure Villa Romanazzi Carducci Bari",
+    "formatted_address": "Via Giuseppe Capruzzi, 326, 70124 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN2mZe7OiX_rXoOIuHG-ZoSyXQ_XnNgajvpcTZEWO4q2i2N_a0zOA1ZDEMa5ye2k2rQh2ebe9kcF3lAYZxB-WgM40z6fsXxkfztRhrNQ3L3i5PaGHclBUdvR9_tB3_g2Tk0pvivuCWgYJRaD_mY0o1hgo6MTVEPjDrdL_xkVNFj14GnDVNQI06KpoLdYzDeqQk8EkYKuHyjkwOHpmoNTlJ9owXHGnrwt9D_0kwRoDb4B3mJ43Lsc0pvmaCSkQJX38lPBrCLF_-FdaU-Ioaf7nvA-e8A4fKoOVySXdXHF8cgZAg&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJQ1ikZrbpRxMRBKiOJPLFHMM",
+    "name": "Enoteca Bar a Vin - Mostofiore",
+    "formatted_address": "Via Roberto da Bari, 128, 70122 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN2e2uYmLCoNIPzjPOHq56WpotGHz48wfpq0JIhwCxS038PM8XZGvEl2a4bJUaTdSB9IG1o-IIMoG97roncDD0IyHwu60OGcXFsua_xyD94WoAVPtn4NKtEs9Iet6QNBWM_VaQDlsieqoNwYrmYl-K25FILEzEtB6BtS17r-GmGlGIbDXJWHDZJ3kNEILNbYCIWmTXMsssb68xyhZOHYypaZkt29SJQbNF6_93KX4GAIqcOPaHkieHykQy52thRYwdG0NWo37Vwh5o8EZwirokcIrjAx-pvYNezhpw0Fb1NevQ&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJURFXwTrvRxMRfyZJBVBpfY0",
+    "name": "Enoteca Vinarius De Pasquale",
+    "formatted_address": "Viale Europa, 16/c, 70132 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN2-0mavv645uEh2H-jL7Qv3QcV2-wYi6hmUpI6gcC3saue-i8gIiDd19t_XV4RfWAMauNvQgypbgWOXz1OgAL_aYeKKlEyiyPh1WwB5Z_4L0veF9svJOg2AcuHysI_1vPmZeQgrJlkSxGT3izy4OBxb2jfaKH7KO-SQJq_Ra5nayNBKOxPey1mIYYGHINpQ6iby2RrAFhtcXLipVAXnoANWwRiTZoIMM2Ct9BPOV5iOJBNpacREjpVAsFSp5-LNXNopIzOSjPqG6QzPJfEGXGLc26QB8W4vLTLUL_NbblJfXM9zDKaWwCLW3cQxC4T8j_h-pCSLBYGiVKuQPLNy_q1rk268gB2D9EWLMRdYi00pRCtiQiOpdIx2MfKaoz24KYXfaFS-z0Fj4T6AgzDCWbcXiCs_dh85x0dbCFiZ6E4&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJiaR7fmToRxMRNdnoxBowKT8",
+    "name": "La Cantina dello Zio",
+    "formatted_address": "Strada Palazzo di Città, 51, 70122 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0rH-_o4S99_ZUdYEdJofdRYk8KIp13shLoDB14EaLP2hB6nO7qS2Hav33GvjWQlhUmHJOLhw4SXeoXVk-hxgrzuMHV7NxQs3ttXhjJD9WsDMbG3kJb5myKAC4273h1GmcMI1jo7LzTKJ5ejBwBBbQ3DexsRtlRJ_hCCuYtNg6Url2C9QJrYSx7GKMBCT-SDQQft5iMHJM1GGx6GpbL0Ylic3SkcbyyXRyYaHZUT1N-Dw7A9z_JG1pKzIBP53c2EYROIkEy6QZRc4wXOs-qai3NsVtcgl-a7I92Vozh95xpTQ&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJndcOmW_pRxMRfNxFivXGCMo",
+    "name": "Antò Ristorante -- Cucina tipica pugliese -- Bari",
+    "formatted_address": "Strada Palazzo di Città, 14, 70122 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0XD7926i4JwnpJty_P0ycS2F7lHEYWW1iOA17RXyiuUdtAVOpsUVupxT9Tf5zgJoGOfjVB0NWzWHNVgbt05niBceKgcfs2lIJtfglmfLYfu-mt1Kdf-3HPNf5vokMT9BnzY_Ps8OCrNvmvUIrs3cFF-RQouS-OBH8mt0RoTPgxzaA9ha4ZMMFq4NTt4YTiN04PLRYoVDwyKexv2CUosTfyEtUnoiU1AH6qtbHgQGKQ2A239PwqCqf-EJn2WGqWjW6zw0pWUISvRE3WpqeOkqZ2_m1TvTGqYBbjYjXix4mM8g&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJyW6qemToRxMRDHUuMHiKMJ4",
+    "name": "La Uascezze",
+    "formatted_address": "Corte S.Agostino, 2/3/4, 70122 Bari BA, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN3zrOpEDpoBtJmylmO3SkHxQf_Hvci5gUpxEqJSI6A9WsIrwDN1IxoNFqMpZaO7lVi_9qNgW6UFCEbXtltSPuXGYVoXP608R88m5TPdVHVNjYAUO2bLrGwfQO4F3sMglzuHdHblHVZIB4nyxOphhnzO2PqirEyu5sFK5pjxpFsMEeSh-tweBqhCOu9rRLgBUEAheeTucWm9Dk4686tBWgoiJWbabS0r1hvzjvPkW9Z41XStfO8VHTTnjV6dhZxYzE4pqsHgds106533Rstwh2Ou4jOqLZEa4eNxW7oEbvBxOQ&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJsYOYMPXoRxMRkZDrlW2vLU4",
+    "name": "Dn Pasticceria Bari",
+    "formatted_address": "Via Sagarriga Visconti, 71, 70122 Bari ",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0oz0FbOfrDK8tNPPz_hauekytAb85_6eScSTA_8-if7SxnYFIOUdom0Zap38nb8hesll0El9Wx2ySvu67fJx5mgg72bDtMn7LTiWoTluFZnxGr79EUktfcuX7E4uyvYjxCwJ5Y5aSYxoFt-E-aLDdbud3L0OwPkWqDewrR5sL-MHBPe-_1x6kE5LdaT1Gp2KQXQHk8jPhBo0UpHuHcwRGZr9azK-CTZw-n6mut5P8H1glO7DDQwq9mV7rs26-6Md0Kg5D_RpbPPb-Ronm0xB6_ypgdrk_4HLGTH9A3qzMODQ&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "dolci_tipici",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  }
+
+  
+  
+ 
+  
+  
+  
+]

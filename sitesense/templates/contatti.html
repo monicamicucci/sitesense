@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Contattaci</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: #f3fdf9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .contact-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 520px;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-container h1 {
+      margin: 0 0 8px;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .contact-container p {
+      margin-bottom: 24px;
+      color: #5f6f6b;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #d6e5df;
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #3bb78f;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #3bb78f;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #2fa37a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contact-container">
+    <h1>Contattaci</h1>
+    <p>Compila il modulo e ti risponderemo il prima possibile.</p>
+
+    <form>
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" placeholder="Il tuo nome">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nome@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+      </div>
+
+      <button type="submit">Invia messaggio</button>
+    </form>
+  </div>
+
+</body>
+</html>

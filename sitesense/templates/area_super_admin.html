@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initialya.it - Area Super Admin</title>
+  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/ai-loading.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body class="bg-[#0f3e34] text-slate-800" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+  <!-- Pannello verde a sinistra, uniforme con le altre pagine -->
+  <aside id="left-sidebar" class="fixed left-0 top-0 z-50 h-screen w-24 bg-[#0b2c26] flex flex-col items-center justify-between py-4">
+    <!-- Icona menu in alto -->
+    <div class="w-full flex items-center justify-center">
+      <button id="sidebar-menu-btn" class="rounded-md w-10 h-10 flex items-center justify-center hover:bg-white/10" aria-label="Menu">
+        <span class="material-icons text-white invisible">menu</span>
+      </button>
+      <div id="sidebar-menu-panel" class="absolute top-14 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-28 z-50" style="display:none;">
+        <a href="/" class="block px-3 py-2 text-sm">Home</a>
+<a href="/login?next=/area_riservata" class="block px-3 py-2 text-sm">Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Icona "+" per nuova ricerca -->
+    <div class="w-full flex items-center justify-center mt-auto mb-6">
+      <a href="/" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10" aria-label="Nuova ricerca" title="Nuova ricerca">
+        <span class="material-icons text-white">add</span>
+      </a>
+    </div>
+
+    <!-- Avatar profilo e pannello Logout -->
+    <div class="w-full flex items-center justify-center">
+      <button id="profile-button" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10" aria-label="Profilo" title="Profilo">
+        <img src="/assets/user-variant1.png" alt="Profilo" class="w-8 h-8 rounded-full" />
+      </button>
+    </div>
+    <div id="profile-menu-panel" class="absolute bottom-16 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-40 z-50" style="display:none;">
+      {% set is_super = request.cookies.get('super_auth') == '1' %}
+      {% if is_super %}
+      <a href="/logout?next=/" class="block px-3 py-2 text-sm">Logout</a>
+      {% else %}
+      <a href="/login_super_admin" class="block px-3 py-2 text-sm">Login</a>
+      {% endif %}
+    </div>
+  </aside>
+
+  <!-- Contenuto principale -->
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden pl-24">
+    <header class="sticky top-0 z-50 bg-transparent">
+      <div class="flex items-center justify-between whitespace-nowrap px-4 py-4">
+        <div class="flex items-center gap-4 ml-0">
+          <a class="flex items-center gap-2 text-slate-900" href="/area_super_admin">
+            <img id="brand-logo-header" src="/assets/logo.png" alt="brand" class="h-10 w-auto relative left-9 top-9">
+          </a>
+        </div>
+        <div class="flex flex-1 items-center justify-end gap-6 text-white">
+          <span class="text-sm">{{ superadmin_email or '' }}</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex flex-1 flex-col items-start pt-2 pb-24">
+      <section class="w-full min-h-screen bg-[#0f3e34] flex items-start justify-center pt-24 rounded-none">
+        <div class="w-full max-w-[1200px] px-6">
+          <h1 class="text-[#b8f36d] text-2xl font-semibold mb-4">Area Super Admin</h1>
+          {% if error_message %}
+          <div class="rounded-md bg-red-100 text-red-800 px-4 py-2 mb-4">{{ error_message }}</div>
+          {% endif %}
+
+          <div class="bg-white rounded-xl shadow-sm">
+            <div class="px-4 py-3 border-b">
+              <h2 class="text-base font-semibold text-slate-700">Utenti e programmi di viaggio</h2>
+              <p class="text-sm text-slate-500">Elenco degli utenti associati e, per ciascuno, i programmi creati.</p>
+            </div>
+            <div class="p-4 overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead>
+                  <tr class="text-left text-slate-600">
+                    <th class="py-2 px-3">Utente</th>
+                    <th class="py-2 px-3">Email</th>
+                    <th class="py-2 px-3">Programmi di viaggio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for up in user_programs %}
+                  <tr class="border-t">
+                    <td class="py-3 px-3 font-medium text-slate-800">{{ up.name or '—' }}</td>
+                    <td class="py-3 px-3 text-slate-700">{{ up.email or '—' }}</td>
+                    <td class="py-3 px-3">
+                      {% if up.programs and up.programs|length > 0 %}
+                        <ul class="list-disc ml-5 space-y-1">
+                          {% for p in up.programs %}
+                          <li>
+                            <span class="font-medium">{{ p.city_name }}</span>
+                            <span class="text-slate-500">(Programma #{{ p.program_id }}, Locali: {{ p.num_locali }})</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      {% else %}
+                        <span class="text-slate-500">Nessun programma</span>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNXC9FG93K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZNXC9FG93K', { anonymize_ip: true });
+</script>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect" />
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Work+Sans:wght@400;500;700;900"
+    onload="this.rel='stylesheet'" rel="stylesheet" />
+  <title>SiteSense - Your Travel Companion</title>
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="/static/ai-loading.css" />
+
+  {% if restore_program_id %}
+  <script>
+    window.__RESTORE_PROGRAM_ID__ = "{{ restore_program_id | tojson }}";
+  </script>
+  {% endif %}
+
+  <style>
+    html { scroll-behavior: auto !important; }
+
+    body {
+      font-family: "Work Sans", "Noto Sans", sans-serif;
+      background-color: #0f3e34;
+    }
+
+    /* ===============================
+       HOME – SFONDO CON IMMAGINE
+       =============================== */
+ body.body-home-hero {
+  background-image: url("/assets/inytalia.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+#page-selection {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 558px) {
+    #home-chi-siamo-btn { display: none !important; }
+
+
+
+
+
+#brand-logo-header{
+ position: relative;
+ margin: 0 auto;
+
+ transform: translateX(-50%);
+ display: block;
+}
+
+#sidebar-initalya-logo{
+  position: absolute !important;
+  top: 25px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  z-index: 10000 !important;
+}
+
+
+
+ #left-sidebar {
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 12px;
+    z-index: 100;
+    border-radius: 16px 16px 0 0;
+ }
+  
+ #results-icons {
+  position: fixed !important;
+  left: 40%;
+  transform: translateX(-30%);
+  bottom: 1.7% !important;
+  flex-direction: row !important;
+  display: flex !important;
+  top:auto !important;
+  /* evita che vadano a capo se vuoi riga unica */
+  border-radius: 16px 16px 0 0;
+  gap: 30px; /* usa rem invece di px per adattarsi meglio */
+
+
+
+}
+
+
+
+
+
+
+  /* Mobile: sposta l'icona profilo (omino) in alto a destra */
+  #profile-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    z-index: 1001 !important;
+  }
+  /* Pannello menu profilo ancorato sotto l'icona */
+  #profile-menu-panel {
+    position: fixed !important;
+    top: 60px !important;
+    right: 12px !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 1002 !important;
+  }
+
+
+
+
+
+
+
+
+  
+
+   .results-mode #chat-right-panel{
+   position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 64px !important;
+    top: auto !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 70vh;
+
+    border-radius: 16px 16px 0 0;
+    transform: translateY(calc(100% - 46px));
+    transition: transform 0.35s ease;
+    }
+
+    #howto-popup {
+      width: 90vw !important;
+    }
+
+
+  
+ 
+   #results-inner-container {
+    width: 100vw !important;
+    margin-left: -7.9rem !important; /* Annulla esattamente pl-24 (96px) */
+    padding-left: 2.75vw !important;
+    padding-right: 2.75vw !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    left: auto !important;
+  }
+
+   #results-form-slot, #search-form {
+    margin-left: 0 !important;
+  }
+
+   #page-lfw {
+   margin-left:1rem !important;
+   margin-top: 3rem !important;
+  }
+ 
+
+}
+
+
+
+
+  
+
+  /* Contenuto prende tutta larghezza */
+  
+   
+  
+
+
+
+
+
+
+
+
+
+
+/* RISULTATI REALMENTE VISIBILI → niente immagine */
+body.results-visible {
+  background-image: none !important;
+  background-color: #e8f6ef;
+}
+    .results-mode { background-color: #e8f6ef !important; overflow-y: auto !important; }
+    .results-mode.body-home-hero { background-image: none !important; }
+    .results-mode #home-how-btn { display: none !important; }
+    /* Bottone "Chi siamo" visibile solo in home */
+    #home-chi-siamo-btn { display: inline-flex; }
+    .results-mode #home-chi-siamo-btn { display: none !important; }
+
+    body.body-home-hero::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:transparent;
+      z-index: -1;
+    }
+
+     /* In modalità risultati, la barra della chat senza contorni */
+    .results-mode #results-form-slot label {
+      box-shadow: none !important;
+      border: none !important;
+      background: #ffffff !important;
+      gap: 8px;
+      padding-right: 6px;
+      height: 64px !important;
+    }
+    .results-mode #results-form-slot #search-input {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .results-mode #results-form-slot button {
+      width: 38px;
+      height: 38px;
+    }
+    .results-mode #results-form-slot button[type="submit"] {
+      margin-left: -4px !important;
+    }
+    .results-mode #results-form-slot button[type="submit"] {
+      margin-left: 0 !important;
+    }
+
+   
+@media (max-width: 558px) {
+
+
+
+
+
+ #left-sidebar {
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 12px;
+    z-index: 100;
+    border-radius: 16px 16px 0 0;
+ }
+  
+
+
+
+
+
+
+
+
+  
+
+   .results-mode #chat-right-panel{
+   position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 64px !important;
+    top: auto !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 70vh;
+
+    border-radius: 16px 16px 0 0;
+    transform: translateY(calc(100% - 46px));
+    transition: transform 0.35s ease;
+
+   
+
+
+
+
+    }
+  
+
+
+
+
+
+}
+
+
+
+
+
+
+    .material-icons {
+      font-family: "Material Icons";
+      font-size: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    #page-intro .activities-grid {
+      grid-template-columns: 200px 230px 230px 230px !important;
+      justify-content: start !important;
+    }
+
+   .chat-bubble-user {
+      background-color: #b8f36d;
+      color: white;
+      border-radius: 18px 18px 0 18px;
+      padding: 10px 16px;
+      max-width: 80%;
+      margin-left: auto;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-bubble-ai {
+      background-color: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px 18px 18px 0;
+      padding: 12px 16px;
+      max-width: 85%;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    #chatbot-messages {
+      scrollbar-width: none;
+    }
+    #chatbot-messages::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    #chatbot-messages::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #chatbot-messages::-webkit-scrollbar-thumb {
+      background: transparent;
+      border: none;
+    }
+    /* Scrollbar invisibile SOLO nella pagina dei risultati */
+    body.results-mode #chat-right-panel,
+    body.results-mode #results-inner-container,
+    body.results-mode .results-page {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    body.results-mode #chat-right-panel::-webkit-scrollbar,
+    body.results-mode #results-inner-container::-webkit-scrollbar,
+    body.results-mode .results-page::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    /* Animazione di digitazione */
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .typing-indicator span {
+      height: 8px;
+      width: 8px;
+      margin: 0 1px;
+      background-color: #0c7ff2;
+      display: block;
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .typing-indicator span:nth-of-type(1) {
+      animation: 1s blink infinite 0.3333s;
+    }
+
+    .typing-indicator span:nth-of-type(2) {
+      animation: 1s blink infinite 0.6666s;
+    }
+
+    .typing-indicator span:nth-of-type(3) {
+      animation: 1s blink infinite 0.9999s;
+    }
+
+    @media (max-width: 768px) {
+      .activities-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .activities-grid { grid-template-columns: 1fr; }
+    }
+
+    .selection-card-link { color: #190f3e; }
+    .selection-card-link:hover {
+      color: #0b2c26;
+      text-decoration: underline;
+    }
+
+    #page-map,
+    #map-wrapper,
+    .body-map-active,
+    .body-selection-active {
+      background-color: #0f3e34 !important;
+    }
+
+    #map-container { border: none; box-shadow: none; }
+    #route-list { color: #fff; }
+    #route-list .route-item { display: flex; height: 100%; color: #fff; }
+    #route-list .route-item .flex-1 {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    #route-list .route-item .flex-1 > *:last-child {
+      margin-top: auto;
+    }
+    .results-mode header { position: static !important; }
+
+
+   @media (max-width: 558px) {
+
+   #map-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Contenitore verde */
+  #map-wrapper > div {
+    transform: none !important;
+    padding: 12px !important;
+  }
+
+  /* Titoli */
+  #map-wrapper h2,
+  #map-wrapper h3 {
+    font-size: 1rem;
+    margin-left: 0 !important;
+  }
+
+  /* MAPPA */
+  #map-container {
+    width: 100% !important;
+    height: 55vh !important;   /* altezza visibile su mobile */
+    min-height: 300px;
+    border-radius: 12px;
+  }
+
+  /* Cards sotto la mappa */
+  #route-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Evita che la bottom bar copra la mappa */
+  body.results-mode #map-wrapper {
+    padding-bottom: 80px;
+  }
+
+  #route-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+  }
+
+  /* Card singola */
+  #route-list .route-item {
+    height: 100%;
+  }
+
+  /* Sposta il pulsante D a sinistra su mobile */
+  #dashboard-btn-container {
+    position: fixed !important;
+    left: 20px !important;
+    bottom: 15px !important;
+    top: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    z-index: 10001 !important;
+  }
+
+  #map-wrapper > div {
+    width: calc(100% + 98px);   /* allarga */
+    margin-left: -98px;         /* solo verso sinistra */
+  }
+
+
+ #left-sidebar {
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 12px;
+    z-index: 100;
+    border-radius: 16px 16px 0 0;
+ }
+  
+
+
+
+  .results-mode #results-form-slot label {
+      box-shadow: none !important;
+      border: none !important;
+      background: #ffff !important;
+      gap: 2px !important;
+      padding-right: 6px;
+      height: 64px !important;
+      margin-bottom: 50px;
+      width: 100vw;
+      margin-right:100px;
+      border-radius: 0 !important;
+    }
+    .results-mode #results-form-slot #search-input {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .results-mode #results-form-slot button {
+      width: 38px;
+      height: 38px;
+    }
+
+
+  
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    @media (max-width: 558px) {
+      #page-selection {
+        transform: translateX(2px);
+      }
+
+      .selection-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px 10px !important;
+      }
+
+      .selection-card {
+        min-height: auto !important;
+      }
+
+      .selection-card .activity-image {
+        height: 120px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .selection-card h3 {
+        font-size: 0.8rem !important;
+        line-height: 1.2 !important;
+      }
+
+      .selection-card p {
+        font-size: 0.75rem !important;
+        margin-bottom: 6px !important;
+      }
+
+      .selection-card a {
+        font-size: 0.7rem !important;
+      }
+
+      .selection-card img {
+        width: 18px !important;
+        height: 18px !important;
+      }
+
+      .selection-card .minus-btn {
+        width: 22px !important;
+        height: 22px !important;
+        font-size: 14px !important;
+        top: 8px !important;
+        right: 8px !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body class="body-home-hero text-slate-800">
+
+<!-- ===============================
+     SIDEBAR
+     =============================== -->
+<aside id="left-sidebar"
+  class="fixed left-0 top-0 z-50 h-screen w-24 bg-[#0b2c26] flex flex-col items-center justify-between py-4">
+
+  <div class="w-full flex flex-col items-center pt-4">
+    <img
+      src="/assets/_logo-initalya-chiaro.svg"
+      alt="Initalya"
+      class="sidebar-logo-toggle h-8 w-auto max-[558px]:hidden"
+      style="display:none;"
+    />
+  </div>
+   
+  {% if request.cookies.get('auth') == '1' %}
+    <!-- Pulsante D più in alto nella pagina Programma -->
+    <div id="dashboard-btn-container" class="w-full flex items-center justify-center mt-5 mb-1">
+      <a href="/area_riservata" class="rounded-full w-8 h-8 flex items-center justify-center bg-[#b8f36d] text-[#0f3e34] font-bold text-[11px] hover:brightness-105" title="Dashboard" aria-label="Dashboard">D</a>
+    </div>
+    {% endif %}
+
+
+
+  <div class="w-full flex items-center justify-center">
+  </div>
+
+  {% if restore_program_id and request.cookies.get('auth') == '1' %}
+  <div class="w-full flex items-center justify-center mt-auto mb-6">
+    <a href="/" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10">
+      <span class="material-icons text-white">add</span>
+    </a>
+  </div>
+  {% endif %}
+
+  <div id="profile-button-container" class="w-full flex items-center justify-center">
+    <button id="profile-button"
+      class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10">
+      <img src="{{ user and user.profile_image or '/assets/user-variant1.png' }}"
+        class="w-8 h-8 rounded-full" />
+    </button>
+  </div>
+
+  
+
+
+  <div id="profile-menu-panel"
+    class="absolute bottom-16 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-64 z-50"
+    style="display:none;">
+    {% if request.cookies.get('auth') == '1' %}
+    <div class="px-3 pt-3 pb-2 border-b border-white/10">
+      <div class="text-sm font-semibold">{{ user and user.name or '' }}</div>
+      <div class="text-xs text-white/70 truncate">{{ user and user.email or '' }}</div>
+    </div>
+    <a href="/profile" class="block px-3 py-2 text-sm hover:bg-[#145a4c]">Modifica profilo</a>
+    <a href="/logout?next=/" class="block px-3 py-2 text-sm hover:bg-[#145a4c]">Logout</a>
+    {% else %}
+    <a href="/login?next=/area_riservata" class="block px-3 py-2 text-sm">Login</a>
+    {% endif %}
+  </div>
+
+
+  
+</aside>
+
+<!-- ===============================
+     CONTENUTO PRINCIPALE
+     =============================== -->
+<div class="relative flex min-h-screen flex-col pl-24">
+  <img
+    src="/assets/_logo-initalya-chiaro.svg"
+    alt="Initalya"
+    class="sidebar-logo-toggle h-8 w-auto hidden max-[558px]:block fixed top-6 left-1/2 -translate-x-1/2 z-[100]"
+    style="display:none;"
+  />
+
+<header class="sticky top-0 z-50 bg-transparent">
+  <div class="flex px-4 py-4">
+    <img id="brand-logo-header" src="/assets/logo.png" class="h-10 w-auto mt-2 ml-19 md:mt-8 md:ml-10" style="display:none;">
+    {% if not restore_program_id %}
+    <a href="/chi_siamo" id="home-chi-siamo-btn" class="fixed top-10 right-64 text-[#b8f36d] font-semibold">Chi siamo</a>
+    {% endif %}
+  </div>
+</header>
+
+<main class="flex flex-col">
+
+<section id="home-hero"
+  class="w-full min-h-[50vh] flex items-start justify-center pt-32 max-[558px]:-ml-12">
+  <div class="max-w-xl text-center px-4">
+    <img src="/assets/logo.png" class="mx-auto mb-4 h-16">
+    <h2 class="text-[#b8f36d] text-2xl max-[558px]:text-base font-semibold mb-2">SCEGLI  TUA DESTINZAZIONE</h2>
+    <p class="text-[#0f3e34] text-sm max-[558px]:text-xs mb-6 font-semibold" >
+     Preparati a un viaggio dal sapore indimenticabile! Indica al nostro assistente virtuale la località che desideri visitare o la specialità enogastronomica che ti piacerebbe assaggiare. Elaboreremo per te una proposta di itinerario che potrai personalizzare selezionando i risultati migliori!
+     Nella fascia: Dove vuoi andare? 
+    </p>
+            
+              <script type="text/javascript" src="https://embeds.iubenda.com/widgets/e5943846-21a0-4ddd-ab0a-c5a37e4656e7.js"></script>
+            </div>
+            <p id="home-hero-copyright" style="position: fixed; left: 320px; bottom: 12px; color: #ffffff; font-size: 0.9rem;">© 2024 SiteSense. All reserved.</p>
+            <a href="/termini" style="position: fixed; right: 220px; bottom: 12px; color: #ffffff; font-size: 0.9rem; text-decoration: underline;">Termini e condizioni</a>
+          </section>
+          <section id="results-section" class="w-full mb-4 order-first hidden">
+            <!-- Titolo generale per risultati non categorizzati rimosso -->
+
+            <div id="results-inner-container" class="w-full max-w-[1530px] mx-auto px-6 -ml-6">
+              <div id="results-layout" class="w-full flex gap-6">
+                <!-- Nav icone verticale, visibile solo nella pagina risultati -->
+                <aside id="results-icons"
+                  class="flex flex-col items-center gap-4 pt-2 pr-2 fixed top-96 left-8 z-[9999] pointer-events-auto">
+                  <button class="icon-btn" data-page="intro" aria-label="Tipici"
+                   data-icon-default="/assets/icona1-tipici-variant1.png"
+                    data-icon-active="/assets/icona1-tipici-variant2.png">
+                    <img src="/assets/icona1-tipici-variant1.png" alt="Tipici" class="h-7 w-7" />
+                     <span class="icon-label">Piatti Tipici</span>
+                  </button>
+                  <button class="icon-btn" data-page="selection" aria-label="Selezione"
+                    data-icon-default="/assets/icona2-selezione-variant1.png"
+                     data-icon-active="/assets/icona2-selezione-variant2.png">
+                    <img src="/assets/icona2-selezione-variant1.png" alt="Selezione" class="icona-brillante h-7 w-7" />
+                    <span class="icon-label">Selezione</span>
+                  </button>
+                  <button class="icon-btn" data-page="lfw" aria-label="Hotel/Vini/Cucina"
+                    data-icon-default="/assets/icona3-suggeriti-variant1.png"
+                     data-icon-active="/assets/icona3-suggeriti-variant2.png">
+                    <img src="/assets/icona3-suggeriti-variant1.png" alt="Hotel Vini Cucina" class="h-7 w-7" />
+                    <span class="icon-label">Altri suggerimenti</span>
+                  </button>
+                  <button class="icon-btn" data-page="map" aria-label="Mappa"
+                    data-icon-default="/assets/icona4-mappa-variant1.png"
+                     data-icon-active="/assets/icona4-mappa-variant2.png">
+                    <img src="/assets/icona4-mappa-variant1.png" alt="Mappa" class="h-7 w-7" />
+                    <span class="icon-label">Mappa</span>
+                  </button>
+                </aside>
+
+                <!-- Contenitori pagine risultati -->
+                <div id="results-pages" class="flex-1">
+                  <div id="page-intro" class="results-page">
+                    <!-- Intro città e sezioni cibi/prodotti -->
+                  </div>
+                  <div id="page-selection" class="results-page">
+                    <!-- Pannello verde La nostra selezione -->
+                  </div>
+                  <!-- Toolbar bottoni salvataggio (non flottanti), visibile solo in pagina Selezione -->
+                  <div id="save-itinerary-container" class="hidden flex items-center justify-end gap-3 px-6 py-4">
+                    <!-- Pulsante Salva ricerca: non presente nella pagina del programma utente -->
+                    {% if not restore_program_id %}
+                    <button id="save-search-btn" type="button"
+                            class="px-5 py-3 rounded-full bg-[#b8f36d] text-[#0f3e34] font-semibold shadow hover:shadow-md hover:brightness-105 hidden"
+                            aria-label="Salva ricerca"
+                            title="Salva ricerca">
+                      salva ricerca
+                    </button>
+                    {% endif %}
+                    {% if restore_program_id %}
+                    <button id="update-itinerary-btn"
+                      class="px-6 py-3 rounded-full bg-yellow-400 text-[#0f3e34] font-semibold shadow hover:shadow-md hover:brightness-105 transition">
+                      aggiorna itinerario
+                    </button>
+                    {% else %}
+                    <button id="save-itinerary-btn"
+                      class="px-6 py-3 rounded-full bg-yellow-400 text-[#0f3e34] font-semibold shadow hover:shadow-md hover:brightness-105 transition">
+                      salva itinerario
+                    </button>
+                    {% endif %}
+                  </div>
+                  <div id="page-lfw" class="results-page hidden pl-6 md:pl-[1.8rem]">
+                    <!-- Etichetta sinistra per suggerimenti -->
+                    <div id="lfw-left-label" class="text-emerald-600 font-semibold text-lg ml-6 mt-2">Altri suggerimenti
+                    </div>
+                    <!-- Hotel, Vini, Cucina tipica -->
+                  </div>
+                  <div id="page-map" class="results-page hidden">
+                    <!-- Sezione mappa, spostata dinamicamente -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Container legacy per compatibilità precedente -->
+              <div id="categorized-results-container" class="hidden"></div>
+              <div id="results-container" class="hidden"></div>
+            </div>
+          </section>
+         
+<div
+  id="map-wrapper"
+  class="hidden w-full max-w-[1600px] mx-auto px-6 lg:px-12"
+>
+  <!-- CONTENITORE DI ALLINEAMENTO -->
+  <div class="relative -translate-x-4 -translate-y-9 pr-5">
+
+
+  <!-- HEADER -->
+   <div class="mb-6 ml-6">
+    <h2 class="text-[#b7f056] text-xl font-semibold mb-1">
+      Programma di viaggio
+    </h2>
+    <p class="text-[#b7f056] text-xs max-w-3xl">
+      Ecco le tappe che renderanno speciale il tuo percorso. Segui la mappa e non perdere l’occasione di scoprire ciò che di veramente buono c’è!
+    </p>
+  </div>
+
+  <!-- CONTENITORE VERDE -->
+  <div class="w-full bg-[#0f3e34] p-6 rounded-sm">
+
+    <!-- GRID STRUTTURALE -->
+    <div class="grid grid-cols-12 gap-6">
+
+      <!-- MAPPA -->
+      <div class="col-span-12">
+        <h3 class="text-white text-2xl font-semibold mb-4">
+          MAPPA E PERCORSO
+        </h3>
+
+        <div
+          id="map-container"
+          class="relative w-full h-[620px]"
+        ></div>
+      </div>
+
+      <!-- CARDS -->
+      <div class="col-span-12 mt-6">
+        <div
+          id="route-list"
+          class="grid gap-6"
+          style="
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            align-items: stretch;
+          "
+        ></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+          
+          <div
+  id="chat-right-panel"
+  class="fixed right-0 top-0 h-screen
+         w-[320px]
+         min-w-[320px]
+         max-w-[90vw]
+         bg-white rounded-l-lg 
+         border border-slate-200
+         z-40 flex flex-col hidden
+         pt-16"
+>
+            <!-- Header del chatbot -->
+           
+            <div class="p-3 border-b border-slate-200 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="font-semibold text-slate-700 text-sm">Assistant</span>
+              </div>
+            </div>
+            <div id="chatbot-messages"
+  class="p-4 overflow-y-auto flex-1 pb-24"
+>
+              <div class="text-center text-slate-500 text-sm mt-8">
+                <span class="material-icons text-2xl mb-2 block">chat_bubble_outline</span>
+                <p>Inizia una conversazione!</p>
+              </div>
+            </div>
+          
+          </div>
+          
+        </div>
+      </main>
+    </div>
+    
+    <!-- Barra di ricerca in stile chatbot -->
+    
+       <div id="home-form-slot" class="absolute top-[420px] left-[54%] max-[558px]:left-1/2 -translate-x-1/2 z-40 w-full max-w-xl px-4">
+       <form id="search-form" class="w-full">
+
+<label class="flex w-full items-center rounded-full bg-white h-14 px-4">
+
+<span class="material-icons text-slate-500 mr-2">search</span>
+
+<input id="search-input"
+
+class="flex-1 bg-transparent outline-none text-slate-800 placeholder:text-slate-400"
+
+placeholder="Dove vuoi andare?" />
+
+<button type="button" aria-label="Clear" id="clear-button" class="hidden"></button>
+
+<button type="button" aria-label="Microphone" id="mic-button"
+class="rounded-full w-10 h-10 bg-[#b8f36d] text-[#0f3e34] flex items-center justify-center ml-2">
+<span class="material-icons">mic</span>
+</button>
+
+<button type="submit" aria-label="Send"
+class="rounded-full w-10 h-10 bg-[#b8f36d] text-[#0f3e34] flex items-center justify-center ml-2">
+<span class="material-icons">send</span>
+</button>
+
+</label>
+
+
+</form>
+
+<div id="home-how-btn" class="mt-10 flex justify-center" style="display:none;">
+  <a href="#" id="howto-btn" class="px-5 py-2.5 rounded-full bg-[#b8f36d] text-[#0f3e34] font-semibold shadow">come funziona</a>
+</div>
+<div id="howto-popup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); width: min(820px, calc(100vw - 180px)); max-height: 70vh; overflow: auto; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.7); backdrop-filter: blur(12px); display: none; z-index: 120;">
+  <div class="howto-content" style="color:#145a4c;">
+    <div style="display:flex; justify-content: space-between; align-items:center; margin-bottom:12px;">
+      <span style="padding:6px 12px; border-radius:999px; background:#b8f36d; border:1px solid #145a4c; color:#0f3e34;">Come funziona</span>
+      <button id="howto-close" aria-label="Chiudi" style="width:32px; height:32px; border-radius:999px; border:1px solid rgba(255,255,255,0.8); background: rgba(255,255,255,0.2); color:#fff;">×</button>
+    </div>
+    <h2 style="margin:0 0 12px 0; font-weight:700; color:#145a4c;">IL TUO ITINERARIO DI VIAGGIO CON UN CLICK</h2>
+    <p>1. Chatta con l’assistente virtuale indicando il periodo di viaggio e il paese italiano che intendi visitare per gustarne le bontà. In alternativa, chiedi all’assistente virtuale dove poter assaggiare quella tipicità che tanto ti incuriosisce e scegli la risposta più adatta a te.</p>
+    <p>2. Considera i programmi di viaggio elaborati dall’assistente virtuale. I risultati mostreranno le attività positivamente recensite per l’offerta gastronomica del posto e le attività ricettive dove soggiornare per guardare da vicino i bellissimi borghi italiani.</p>
+    <p>3. Approfondisci le caratteristiche di ogni singola attività suggerita. Ciascuna scheda contiene dati, foto, contatti, mappa e magari anche un tour virtuale degli interni.</p>
+    <p>4. Scegli se salvare l’itinerario tra i tuoi preferiti o se eliminarlo, procedendo così con una nuova ricerca. Gli itinerari generati saranno di volta in volta conservati nella tua area riservata della piattaforma.</p>
+  </div>
+</div>
+
+      </div>
+<!-- Slot RISULTATI: il form viene spostato qui in modalità risultati -->
+<div id="results-form-slot" class="fixed bottom-1 right-0 z-40 w-full max-w-sm px-0 flex justify-end"></div>
+<!-- Footer risultati: non fisso, visibile solo in modalità risultati alla fine dello scorrimento -->
+<div id="results-footer" class="w-full text-center text-slate-500 text-xs hidden mt-8 mb-6">
+  © 2024 SiteSense. All reserved.
+  </div>
+  <!-- Pulsante Salva ricerca spostato nella toolbar sopra (non flottante) -->
+   
+   
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('sidebar-menu-btn');
+      var panel = document.getElementById('sidebar-menu-panel');
+      if (btn && panel) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function () { panel.style.display = 'none'; });
+      }
+
+      // Toggle del menu profilo (Logout)
+      var pbtn = document.getElementById('profile-button');
+      var ppanel = document.getElementById('profile-menu-panel');
+      if (pbtn && ppanel) {
+        pbtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          ppanel.style.display = ppanel.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function () { ppanel.style.display = 'none'; });
+      }
+      // Popup "Come funziona" (bottone verde + pannello centrato)
+      var howtoBtn = document.getElementById('howto-btn');
+      var howtoPopup = document.getElementById('howto-popup');
+      var howtoClose = document.getElementById('howto-close');
+      if (howtoBtn && howtoPopup) {
+        howtoBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          howtoPopup.style.display = 'block';
+        });
+        document.addEventListener('click', function (ev) {
+          if (howtoPopup.style.display === 'block') {
+            var content = howtoPopup.querySelector('.howto-content');
+            if (content && !content.contains(ev.target) && !howtoBtn.contains(ev.target)) {
+              howtoPopup.style.display = 'none';
+            }
+          }
+        });
+        if (howtoClose) {
+          howtoClose.addEventListener('click', function () { howtoPopup.style.display = 'none'; });
+        }
+      }
+      function updateHomeHowVisibility(){
+        var homeHow = document.getElementById('home-how-btn');
+        if(!homeHow) return;
+        var aiLoading = document.querySelector('.ai-loading-container');
+        var preloaderEl = document.getElementById('preloader');
+        var programLoader = document.getElementById('program-loader');
+        var aiVisible = !!(aiLoading && aiLoading.offsetParent !== null);
+        var preVisible = !!(preloaderEl && preloaderEl.offsetParent !== null);
+        var progVisible = !!(programLoader && programLoader.offsetParent !== null);
+        homeHow.style.display = (aiVisible || preVisible || progVisible) ? 'none' : 'flex';
+      }
+      updateHomeHowVisibility();
+      var mo = new MutationObserver(function(){ updateHomeHowVisibility(); });
+      mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style','class'] });
+    })();
+  </script>
+
+  <script src="/static/script.js" defer></script>
+  <script async
+     src="https://maps.googleapis.com/maps/api/js?key=&callback=initApp"></script>
+
+
+</html>

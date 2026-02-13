@@ -1,0 +1,92 @@
+[
+  {
+    "place_id": "ChIJ-_a-tGnoRxMRzWs68K-s92U",
+    "name": "JR Hotels Grande Albergo delle Nazioni Bari",
+    "formatted_address": "Lungomare Nazario Sauro, 7, 70121 Bari BA, Italia",
+    "image": "https://content.skyscnr.com/available/2224709092/2224709092_WxH.jpg",
+    "category": "hotel",
+    "lat": 41.12187,
+    "lng": 16.87198,
+    "rating": 4.4,
+    "reviews_count": 2150
+  },
+  
+  
+  {
+    "place_id": "ChIJVVUFH1noRxMRC17k7Jmd_Ow",
+    "name": "Hotel Excelsior Bari",
+    "formatted_address": "Via G. Petroni, 15, 70124 Bari BA, Italia",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/12/1f/df/caption.jpg?w=700&h=700&s=1",
+    "category": "hotel",
+    "lat": 41.10843,
+    "lng": 16.86821,
+    "rating": 4.2,
+    "reviews_count": 1320
+  },
+  {
+    "place_id": "ChIJURFXwTrvRxMRfyZJBVBpfY0",
+    "name": "Enoteca Vinarius De Pasquale",
+    "formatted_address": "Viale Europa, 16/c, 70132 Bari BA, Italia",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQojJjs5MrN_S1dBv8SxlKxow8l0JAiDLCqJw&s",
+    "category": "vini",
+    "lat": 41.09765,
+    "lng": 16.85044,
+    "rating": 4.6,
+    "reviews_count": 420
+  },
+  {
+    "place_id": "ChIJNwuU2rTpRxMR2luZ355zeSE",
+    "name": "Enoteca del Centro",
+    "formatted_address": "Via Roberto da Bari, 110, 70122 Bari BA, Italia",
+    "image": "https://shop.enotecadelcentro.it/cdn/shop/files/Interni_5_1400x.jpg?v=1645870424",
+    "category": "vini",
+    "lat": 41.12392,
+    "lng": 16.86966,
+    "rating": 4.5,
+    "reviews_count": 310
+  },
+  {
+    "place_id": "ChIJiaR7fmToRxMRNdnoxBowKT8",
+    "name": "La Cantina dello Zio",
+    "formatted_address": "Strada Palazzo di Città, 51, 70122 Bari BA, Italia",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/2c/da/ec/orecchiette-ai-frutti.jpg?w=900&h=500&s=1",
+    "category": "vini",
+    "lat": 41.12833,
+    "lng": 16.87061,
+    "rating": 4.3,
+    "reviews_count": 870
+  },
+  {
+    "place_id": "ChIJndcOmW_pRxMRfNxFivXGCMo",
+    "name": "Antò Ristorante -- Cucina tipica pugliese -- Bari",
+    "formatted_address": "Strada Palazzo di Città, 14, 70122 Bari BA, Italia",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ca/11/c1/la-nostra-sala-di-sera.jpg?w=900&h=500&s=1",
+    "category": "cucina_tipica",
+    "lat": 41.12812,
+    "lng": 16.87002,
+    "rating": 4.7,
+    "reviews_count": 980
+  },
+  {
+    "place_id": "ChIJ71k2smboRxMR2ue3rwajtJ4",
+    "name": "MastroCiccio",
+    "formatted_address": "Corso Vittorio Emanuele II, 15, 70122 Bari BA, Italia",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "ristoranti",
+    "lat": 41.12641,
+    "lng": 16.86921,
+    "rating": 4.5,
+    "reviews_count": 6200
+  },
+  {
+    "place_id": "ChIJ281Eq2boRxMRVJyrdBu7_oo",
+    "name": "La Tana del Polpo - Trattoria di Mare - Sede Storica",
+    "formatted_address": "Strada Vallisa, 50, 70122 Bari BA, Italia",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "ristoranti",
+    "lat": 41.12774,
+    "lng": 16.87093,
+    "rating": 4.6,
+    "reviews_count": 5400
+  }
+]

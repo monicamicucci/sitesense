@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viaggio Enogastronomico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+      background: #f9f9f9;
+    }
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300vw;
+    }
+
+    .slide {
+      flex: 1 0 100vw;
+      height: 100vh;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #333;
+    }
+
+    .chatbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .chatbar input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+
+    .chatbar button {
+      padding: 0.75rem 1.2rem;
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* Slide 1 */
+    .map-box {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .map-box iframe {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      border: none;
+    }
+
+    .info-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .info-box {
+      flex: 1 0 200px;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Slide 2 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .monument-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .monument-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .monument-card p {
+      padding: 0.75rem;
+    }
+
+    /* Slide 3 */
+    .activity-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .activity-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .activity-card .stars {
+      padding: 0.5rem 1rem;
+      color: gold;
+    }
+
+    .activity-card .details {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      transition: max-height 0.3s ease;
+    }
+
+    .activity-card.expanded .details {
+      max-height: 200px;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-wrapper">
+    <div class="slider-container" id="slider">
+
+      <!-- Slide 1 -->
+      <section class="slide">
+        <div class="map-box">
+          <iframe src="https://maps.google.com/maps?q=Firenze&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+          <div>
+            <h2>Firenze</h2>
+            <p>Capitale della Toscana, celebre per arte, architettura e gastronomia.</p>
+          </div>
+        </div>
+        <div class="info-boxes">
+          <div class="info-box">Cibi tipici</div>
+          <div class="info-box">Vini</div>
+          <div class="info-box">Sagre ed eventi</div>
+          <div class="info-box">Dolci</div>
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="slide">
+        <h2>Cosa visitare</h2>
+        <div class="card-grid">
+          <div class="monument-card">
+            <img src="https://placehold.co/300x150" alt="Monumento">
+            <p>Duomo di Firenze</p>
+          </div>
+          <div class="monument-card">
+            <img src="https://placehold.co/300x150" alt="Monumento">
+            <p>Ponte Vecchio</p>
+          </div>
+          <!-- Altri monumenti... -->
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="slide">
+        <h2>Programma di viaggio</h2>
+        <div class="card-grid">
+          <div class="activity-card" onclick="toggleCard(this)">
+            <img src="https://placehold.co/300x150" alt="Attività">
+            <div class="stars">★★★★☆</div>
+            <div class="details">
+              <p>Dettagli sull'attività commerciale...</p>
+            </div>
+          </div>
+          <!-- Altre card... -->
+        </div>
+      </section>
+    </div>
+
+    <div class="dots">
+      <div class="dot active" onclick="goToSlide(0)"></div>
+      <div class="dot" onclick="goToSlide(1)"></div>
+      <div class="dot" onclick="goToSlide(2)"></div>
+    </div>
+  </div>
+
+  <div class="chatbar">
+    <input type="text" placeholder="Scrivi un messaggio...">
+    <button>Invia</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateX(-${index * 100}vw)`;
+      document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+      document.querySelectorAll('.dot')[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    function toggleCard(card) {
+      card.classList.toggle('expanded');
+    }
+  </script>
+</body>
+</html>

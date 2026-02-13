@@ -1,0 +1,30 @@
+{
+    "cucina_tipica": "ristorante cucina tipica Bari",
+    "piatti_tipici": [
+        "Spaghetti all'Assassina, Bari",
+        "Riso, Patate e Cozze, Bari",
+        "Orecchiette con le Cime di Rapa, Bari",
+        "Polpo in Acqua Sua, Bari",
+        "Baccal\u00e0 in Umido, Bari",
+        "Braciole di Cavallo, Bari"
+    ],
+    "dolci_tradizionali": "pasticceria dolci tipici Bari",
+    "dolci_specifici": [
+        "Sospiri, Bari",
+        "Sporcamuss, Bari",
+        "Cartellate, Bari"
+    ],
+    "vini": "enoteca vini locali Bari",
+    "vini_specifici": [
+        "Negroamaro vino, Bari",
+        "Primitivo vino, Bari",
+        "Nero di Troia vino, Bari"
+    ],
+    "prodotti_tipici": "negozi prodotti tipici Bari",
+    "prodotti_specifici": [
+        "Olio Extra Vergine d'Oliva Terra di Bari DOP, Bari",
+        "Burrata di Andria IGP, Bari",
+        "Taralli Pugliesi, Bari"
+    ],
+    "hotel": "hotel Bari"
+}

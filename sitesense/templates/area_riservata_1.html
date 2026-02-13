@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+    onload="this.rel='stylesheet'" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/ai-loading.css">
+  <script src="/static/script.js" defer></script>
+  <title>Area Riservata</title>
+
+  <style>
+    :root {
+      --bg: #eaf7f1;
+      --text: #0f3e34;
+      --muted: #4b635c;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin-left: 40px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      width: 100%;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1296px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: #0f3e34;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+    }
+
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+    }
+
+    .content {
+      padding: 24px 32px;
+      max-width: 9536px;
+      margin: 0 auto;
+      
+    }
+
+
+    .brand {
+      margin-bottom: 24px;
+    }
+
+    .brand img {
+      height: 28px;
+    }
+
+    .intro h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 800;
+      margin: 8px auto 12px;
+      max-width: 720px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 24px;
+    }
+
+    .hero {
+      max-width: 1536px;
+      margin: 0 auto 28px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .list h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 24px auto 28px;
+      max-width: 720px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+      max-width: 1536px;
+      margin: 32px auto 0;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .city-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .city-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 auto;
+      color: var(--text);
+    }
+
+    .city-photo {
+      display: block;
+      width: 100%;
+      height: 200px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+      background: #ffffff;
+    }
+
+    .city-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="left-sidebar"
+      class="fixed left-0 top-0 z-50 h-screen w-24 bg-[#0b2c26] flex flex-col items-center justify-between py-4">
+      <!-- Spazio icona menu (icona nascosta per mantenere layout) -->
+      <div class="w-full flex items-center justify-center">
+         <button id="sidebar-menu-btn" class="rounded-md w-10 h-10 flex items-center justify-center hover:bg-white/10" aria-label="Menu">
+           <span class="material-icons text-white invisible">menu</span>
+         </button>
+         <div id="sidebar-menu-panel" class="absolute top-14 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-28 z-50" style="display:none;">
+           <a href="/login_super_admin" class="block px-3 py-2 text-sm"
+              style="background-color:#16a34a;color:white;border-radius:6px;margin:6px;display:block;text-align:center;">
+              Area Super Admin
+           </a>
+         </div>
+      </div>
+      <!-- Gruppo icone centrali -->
+      <!-- Pulsante "+" per tornare alla pagina di ricerca -->
+      <div class="w-full flex items-center justify-center mt-auto mb-6">
+        <a href="/" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10" aria-label="Nuova ricerca" title="Nuova ricerca">
+          <span class="material-icons text-white">add</span>
+        </a>
+      </div>
+
+      <!-- Icona profilo in basso -->
+      <div class="w-full flex items-center justify-center">
+        <button id="profile-button" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10" aria-label="Profilo" title="Profilo">
+          <img src="{{ user.profile_image | default('/assets/user-variant1.png', true) }}" alt="Profilo" class="w-8 h-8 rounded-full" />
+        </button>
+      </div>
+      <!-- Pannello menu profilo in verde scuro: header con nome/email + voci Edit profile e Sign out -->
+      <div id="profile-menu-panel" class="absolute bottom-16 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-64 z-50" style="display:none;">
+        <!-- Header utente -->
+        <div class="px-3 pt-3 pb-2 border-b border-white/10">
+          <div class="text-sm font-semibold leading-tight">{{ user.name or '' }}</div>
+          <div class="text-xs text-white/70 truncate">{{ user.email or '' }}</div>
+        </div>
+        <!-- Azioni -->
+        <a href="/profile" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-[#145a4c] rounded-md">
+          <span class="material-icons text-[#b8f36d] text-base">person</span>
+         Modifica profilo
+        </a>
+        {% set is_auth = request.cookies.get('auth') == '1' %}
+        {% if is_auth %}
+        <a href="/logout?next=/" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-[#145a4c] rounded-md">
+          <span class="material-icons text-[#b8f36d] text-base">logout</span>
+          Logout
+        </a>
+        {% else %}
+                <a href="/login?next=/area_riservata" class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-[#145a4c] rounded-md">
+          <span class="material-icons text-[#b8f36d] text-base">login</span>
+          Sign in
+        </a>
+        {% endif %}
+      </div>
+    </aside>
+      <main class="content ml-80">
+     <h1> area super admin </h1>
+     {% if view == 'profile' %}
+     {% include 'partials/profile_content.html' %}
+     {% endif %}
+      </main>
+       <script>
+    (function(){
+      var btn = document.getElementById('sidebar-menu-btn');
+      var panel = document.getElementById('sidebar-menu-panel');
+      if (btn && panel) {
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function(){ panel.style.display = 'none'; });
+      }
+
+      // Toggle del menu profilo (Logout)
+      var pbtn = document.getElementById('profile-button');
+      var ppanel = document.getElementById('profile-menu-panel');
+      if (pbtn && ppanel) {
+        pbtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          ppanel.style.display = ppanel.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function(){ ppanel.style.display = 'none'; });
+      }
+      
+      // Nessun messaggio di conferma per il salvataggio automatico
+    })();
+  </script>
+  
+  <!-- Modal conferma eliminazione -->
+  
+</body>
+</html>

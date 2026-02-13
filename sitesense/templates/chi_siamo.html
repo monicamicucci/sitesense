@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi Siamo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% if design_head %}
+  {{ design_head | safe }}
+  {% endif %}
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body { height: 100%; margin: 0; background: transparent; }
+    .chi-siamo-root { min-height: 100vh; background: transparent; margin-left: 96px; }
+    #left-sidebar { position: fixed; left: 0; top: 0; z-index: 50; height: 100vh; width: 96px; background: #0b2c26; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 16px 0; }
+    #sidebar-menu-panel, #profile-menu-panel { background: #0b2c26; color: #fff; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    #sidebar-menu-panel a { display: block; padding: 8px 12px; font-size: 12px; background: #16a34a; border-radius: 6px; margin: 8px; text-align: center; color: #fff; text-decoration: none; }
+    .material-icons { font-family: 'Material Icons'; }
+    .chi-siamo-root > :first-child { margin-top: 0 !important; border-top: 0 !important; }
+    .chi-siamo-root header { background: transparent !important; box-shadow: none !important; }
+
+    @media (max-width: 558px) {
+      /* --- Sidebar & Layout Fixes --- */
+      .chi-siamo-root { margin-left: 0 !important; padding-bottom: 80px !important; }
+      #left-sidebar { 
+        width: 100% !important; 
+        height: 70px !important; 
+        top: auto !important; 
+        bottom: 0 !important; 
+        flex-direction: row !important; 
+        padding: 0 16px !important; 
+        justify-content: space-around !important; 
+      }
+      #left-sidebar > div { width: auto !important; margin: 0 !important; }
+      #home-link { top: 20px !important; right: 20px !important; }
+      .profile-container { position: absolute !important; right: 20px !important; }
+      
+      #profile-menu-panel, #profile-login-panel { 
+        position: fixed !important;
+        bottom: 80px !important; 
+        left: auto !important; 
+        right: 10px !important;
+        transform: none !important; 
+        width: 250px !important; 
+        z-index: 1000 !important;
+      }
+
+      .contact-container { padding: 16px !important; }
+      
+      /* --- Content (React App) Responsive Overrides --- */
+      /* Containers */
+      .chi-siamo-root section > div,
+      .chi-siamo-root div[class*="px-20"] {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+      }
+      
+      /* Grids (force single column) */
+      .chi-siamo-root .grid,
+      .chi-siamo-root div[class*="grid-cols-"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      
+      /* Typography */
+      .chi-siamo-root h1, .chi-siamo-root h1[class*="text-[64px]"] { font-size: 32px !important; }
+      .chi-siamo-root h2, .chi-siamo-root h2[class*="text-5xl"] { font-size: 28px !important; margin-bottom: 1.5rem !important; }
+      .chi-siamo-root h3, .chi-siamo-root h3[class*="text-2xl"] { font-size: 20px !important; }
+      .chi-siamo-root p { font-size: 16px !important; }
+      
+      /* Hero Section specific */
+      .chi-siamo-root section[class*="h-[720px]"] {
+        height: auto !important;
+        min-height: 500px !important;
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+      
+      /* Images */
+      .chi-siamo-root img { 
+        max-width: 100% !important; 
+        height: auto !important; 
+        border-radius: 12px !important;
+      }
+      .chi-siamo-root img[class*="h-[500px]"] {
+        max-height: 300px !important;
+        object-fit: cover !important;
+      }
+      
+      /* Buttons */
+      .chi-siamo-root .flex.gap-4 {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .chi-siamo-root button {
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+      }
+      
+      /* Hide/Adjust decorative elements if needed */
+  
+         /* Ensure background images scale correctly */
+      
+    }
+  </style>
+   
+  </style>
+</head>
+
+<body>
+  <a href="/" id="home-link" style="position: absolute; top: 40px; right: 256px; color: #ffffff; font-weight: 600;  z-index: 100;">Home</a>
+ 
+
+  <aside id="left-sidebar"
+  class="fixed left-0 top-0 z-50 h-screen w-24 bg-[#0b2c26] flex flex-col items-center justify-between py-4">
+
+
+  <div class="w-full flex items-center justify-center">
+  <img
+  id="sidebar-initalya-logo"
+  src="/assets/_logo-initalya-chiaro.svg"
+  alt="Initalya"
+  class="h-8 w-auto"
+  style="display:none; position: relative; top: -390px;"
+/>
+  </div>
+
+  {% if restore_program_id and request.cookies.get('auth') == '1' %}
+  <div class="w-full flex items-center justify-center mt-40 mb-1">
+    <a href="/login?next=/area_riservata"
+      class="rounded-full w-8 h-8 flex items-center justify-center bg-[#b8f36d] text-[#0f3e34] font-bold text-[11px]">D</a>
+  </div>
+  <div class="w-full flex items-center justify-center mt-auto mb-6">
+    <a href="/" class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10">
+      <span class="material-icons text-white">add</span>
+    </a>
+  </div>
+  {% endif %}
+
+{% if request.cookies.get('auth') == '1' %}
+  <div class="w-full flex items-center justify-center profile-container" style="position: relative;">
+    <button id="profile-button"
+      class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10">
+      <img src="{{ user and user.profile_image or '/assets/user-variant1.png' }}"
+        class="w-8 h-8 rounded-full" />
+    </button>
+    <div id="profile-login-panel"
+      style="position: absolute; bottom: 56px; left: 8px; display: none; background: #145a4c; color: #fff; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); width: 120px; z-index: 100;">
+      <a href="/login?next=/area_riservata" class="block px-3 py-2 text-sm" style="background:#145a4c; border-radius:6px; margin:8px; text-align:center; color:#fff; text-decoration:none;">Login</a>
+    </div>
+  </div>
+{% else %}
+  <div class="w-full flex items-center justify-center profile-container" style="position: relative;">
+    <button id="profile-button"
+      class="rounded-full w-12 h-12 flex items-center justify-center hover:bg-white/10">
+      <img src="{{ user and user.profile_image or '/assets/user-variant1.png' }}" class="w-8 h-8 rounded-full" />
+    </button>
+    <div id="profile-login-panel"
+      style="position: absolute; bottom: 56px; left: 8px; display: none; background: #145a4c; color: #fff; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); width: 120px; z-index: 100;">
+      <a href="/login?next=/area_riservata" class="block px-3 py-2 text-sm" style="background:#145a4c; border-radius:6px; margin:8px; text-align:center; color:#fff; text-decoration:none;">Login</a>
+    </div>
+  </div>
+{% endif %}
+
+
+  <div id="profile-menu-panel"
+    class="absolute bottom-16 left-2 bg-[#0b2c26] text-white rounded-md shadow-lg w-64 z-50"
+    style="display:none;">
+    {% if request.cookies.get('auth') == '1' %}
+    <div class="px-3 pt-3 pb-2 border-b border-white/10">
+      <div class="text-sm font-semibold">{{ user and user.name or '' }}</div>
+      <div class="text-xs text-white/70 truncate">{{ user and user.email or '' }}</div>
+    </div>
+    <a href="/profile" class="block px-3 py-2 text-sm hover:bg-[#145a4c]">Modifica profilo</a>
+    <a href="/logout?next=/" class="block px-3 py-2 text-sm hover:bg-[#145a4c]">Logout</a>
+    {% else %}
+    <a href="/login?next=/area_riservata" class="block px-3 py-2 text-sm">Login</a>
+    {% endif %}
+  </div>
+</aside>
+  {% if design_html %}
+  <div class="chi-siamo-root">
+    
+   
+    {{ design_html | safe }}
+  </div>
+  {% else %}
+  <div class="chi-siamo-root">
+    <div class="home-link" style="text-align: right; margin: 12px 24px 0 0;">
+      <a href="/" style="color: #145a4c; text-decoration: underline; font-size: 22px;">Home</a>
+    </div>
+    <div class="contact-container" style="max-width: 520px; margin: 0 auto; padding: 32px;">
+      <h1>Contattaci</h1>
+      <p>Compila il modulo e ti risponderemo il prima possibile.</p>
+      <form>
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" placeholder="Il tuo nome">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nome@email.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Messaggio</label>
+          <textarea id="message" name="message" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+        </div>
+        <button type="submit">Invia messaggio</button>
+      </form>
+    </div>
+  </div>
+  {% endif %}
+  <script>
+    (function(){
+      const btn = document.getElementById('sidebar-menu-btn');
+      const menu = document.getElementById('sidebar-menu-panel');
+      const profileBtn = document.getElementById('profile-button');
+      const profileMenu = document.getElementById('profile-menu-panel');
+      const profileLogin = document.getElementById('profile-login-panel');
+      const isAuth = "{{ '1' if request.cookies.get('auth') == '1' else '0' }}";
+      if(btn && menu){ btn.addEventListener('click', ()=>{ menu.style.display = (menu.style.display==='none' || !menu.style.display) ? 'block' : 'none'; }); }
+      if(profileBtn){
+        profileBtn.addEventListener('click', ()=>{
+          if(profileLogin){
+            profileLogin.style.display = (profileLogin.style.display==='none' || !profileLogin.style.display) ? 'block' : 'none';
+          }
+        });
+      }
+      document.addEventListener('click', (e)=>{
+        if(menu && !menu.contains(e.target) && (!btn || !btn.contains(e.target))) menu.style.display='none';
+        if(profileLogin && !profileLogin.contains(e.target) && (!profileBtn || !profileBtn.contains(e.target))) profileLogin.style.display='none';
+      });
+    })();
+  </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

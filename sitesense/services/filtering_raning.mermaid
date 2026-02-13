@@ -1,0 +1,60 @@
+flowchart TD
+    A["📥 Ricevi Lista Attività<br/>nome, categoria, prezzo, rating, recensioni, servizi, tag, distanza"] --> B["🔍 Analizza Richiesta Utente"]
+    
+    B --> C{"Preferenze Specificate?"}
+    
+    C -->|NO| D["🚫 Escludi Rating minore 3.8<br/>salvo unica opzione"]
+    C -->|SI| E{"Tipo di Preferenza"}
+    
+    E -->|Budget| F{"Fascia Budget"}
+    E -->|Requisiti Specifici| G["🎯 Filtra per Servizi<br/>family, pet-friendly, accessibilita"]
+    E -->|Prodotti Tipici| H["🍽️ Filtra per Tag Prodotti"]
+    
+    F -->|Economico| I["💰 Filtra Fascia 1-2€"]
+    F -->|Medio| J["💳 Filtra Fascia 2€<br/>Rating sopra media"]
+    F -->|Lusso| K["💎 Filtra Fascia 3-4€<br/>Servizi premium"]
+    
+    G --> L{"Risultati Trovati?"}
+    H --> M{"Prodotti Disponibili?"}
+    
+    L -->|SI| N["✅ Mantieni Filtrati"]
+    L -->|NO| O["⚠️ Nessuna attivita rispetta criteri<br/>Usa migliori alternative"]
+    
+    M -->|SI| P["✅ Mantieni con Prodotti"]
+    M -->|NO| Q["⚠️ Prodotti non disponibili<br/>Usa alternative piu votate"]
+    
+    I --> R["🚫 Escludi Rating minore 3.8<br/>salvo unica opzione"]
+    J --> R
+    K --> R
+    N --> R
+    O --> R
+    P --> R
+    Q --> R
+    D --> R
+    
+    R --> S["📊 Calcola Punteggio Qualita<br/>rating × log10(recensioni + 1)"]
+    
+    S --> T["💯 Calcola Rapporto Qualita-Prezzo<br/>rating / fascia prezzo"]
+    
+    T --> U["📍 Calcola Peso Distanza<br/>se disponibile"]
+    
+    U --> V["📈 Ordinamento Multi-Criterio<br/>1. Punteggio qualita<br/>2. Rapporto qualita-prezzo<br/>3. Numero recensioni<br/>4. Distanza"]
+    
+    V --> W["🔢 Seleziona 3-5 Attivita<br/>per categoria<br/>tutte se minore 3"]
+    
+    W --> X["🎨 Formatta Output HTML<br/>nome, prezzo, rating, servizi<br/>descrizione max 20 parole<br/>link Maps/sito"]
+    
+    X --> Y["✅ Output Finale"]
+    
+    style A fill:#e1f5fe
+    style Y fill:#c8e6c9
+    style O fill:#ffecb3
+    style Q fill:#ffecb3
+    style C fill:#f3e5f5
+    style E fill:#f3e5f5
+    style F fill:#f3e5f5
+    style L fill:#f3e5f5
+    style M fill:#f3e5f5
+    style S fill:#e8f5e8
+    style T fill:#e8f5e8
+    style U fill:#e8f5e8

@@ -1,0 +1,35 @@
+[
+  {
+    "place_id": "ChIJS4b4AyPBhkcRcjwyaDJis5M",
+    "name": "MEININGER Milano Garibaldi",
+    "formatted_address": "",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN2Wj3XEh70O9g4lp1Nv2gEDiBU-0IbGGp6aFOo3VfJ8EjDNDtE8GnEUFoCzCKMtZqZLQmCbmvPMfI8DlQmUmqbK4f_1MpI53V3aTxW9XOzgq9JYMsP7RO94W5W8htQpLIbFVbyhBJS32FftMNRihv4P5rdns_f1WUlZVzeMb8gpqrlZsgNzDXdxYmFVMJvu7mjvUEIWORWYS_9GGxEmloj_ZA0luw89muwl94T8DXIxRAg03QbDMVJi4iCmdaJ-0TP-d6XoACcOYSVtkh3G5WZXDbhGnlhe8Tv0OdgqLnI&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.4909067,
+    "lng": 9.1711358,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJVehzS9vGhkcRn60T-z5hZ3g",
+    "name": "Starhotels Anderson",
+    "formatted_address": "",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN39UZlwfsZvJTSLUZ1brHPvVIJcsRrx1zbCRqKEJn-fSKLTMdHq20JBNDZIujKDva0II0ljH5eQjwMykHqeLSweurKuWzb1ygYWPHkckI5DFE8qt3bsesWH75CVP9Dydr7AzdXC1zn7BgfOf0YJgq0Sa9FENbE1-KKMPjtUVAF8jym_mKtuF7333YlgoabW-8UbCwND9y4PiRHvIQQyUteykZlNAEfDPn1RQy6aYTOJioMpUvSb7_9xVKoMlcEdnDI4j_cbSd7rALGiHqT5IVxub_kR4509zjRGVkMdlCCllg&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.4852201,
+    "lng": 9.2068865,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJSVLO2rbGhkcRgBMKDZkHuXc",
+    "name": "Hotel Cavour",
+    "formatted_address": "",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN00_0Tqc-ZriWa0gfkf88C_B6mk_UVb1y7rLi6GLAu7hjNkAqg_df3xDxrO92ag7AavJOqbPjvxmhQDZs71u32xqJDeNQkLrC5DrJT8J4LWGHh5YDl8ZWeeY0FmI2SlmRcG2Nhmt0mNLO722OKbEoKcV6iMb8pFQchuqEhYCnm6OSW3GxsBo2-CQf2KFJKgzj04nC_-DIqLlgWk8BVnjXhZ6zN42eJlsBsGiBAzC8ZK8fXrR6s3Z7F_vnH5ZYvDLiuAwhQla4VgcxAusZNqPO0KmLpCKwROccGr3UHmA4dAaA&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.4726787,
+    "lng": 9.1943495,
+    "rating": 0.0,
+    "reviews_count": 0
+  }
+]

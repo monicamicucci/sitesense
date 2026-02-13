@@ -1,0 +1,90 @@
+[
+  {
+    "place_id": "ChIJoUHVGMnGhkcROK4wslmmhAQ",
+    "name": "Hotel Principe di Savoia ✓",
+    "formatted_address": "Piazza della Repubblica, 17, 20124 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0-G3iTxTGU1pk1CwElDZ5hSqxpU-7u0waBqe3VF72jos3-ULFpaKu-O2UCjej-NMRUE3pKrO6j2AMzfszK54xzVo-fJA4CNGA7_n8t7kMcUv4wbqu9ptobCaAclwYNTn9n39yIbQScc4X34PWK3rrBLQSnWREAFIXd_pzrmR782g2sH0vmvlslmRYkGPUt6V-d40F46PqIvyh8tupn7e6ndS_-FM-5S12oWP2O2R6Z5NbteqlzcWg6OleREkO0ag886lEC4HxB-oZx_zUiH7xMNc4-9JV6oI7YQdWRIIU&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.4798053,
+    "lng": 9.1966635,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJi8h1z6zHhkcRo5RDC06c8mQ",
+    "name": "Four Seasons Hotel Milano ✓",
+    "formatted_address": "Via Gesù, 6-8, 20121 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN1afXP4CXXfrQbaGBpGbZ4hnx-e4iZq7ZD1f69ulE0Fwt7VFJJo8xaC5rX0YZwYiVxJrlLF6G4PuKIh7-k4EWvDEezdsl6mrhDVNps_gcpVt_PqA8Qsmx2nhR0fbhkYpojH5sSZaZ5j0gzyUZvncswE1DOE3aXfsEZQcFuNZ1vX6Psu7cLuQATLXe9YW4NmbNixq-vziZml2SE_XvGf8WNr2SD-PGvgpQHkbUR-xkR5ZrYEeYcmTDNjXnAiItM5U7e4fg9-1fGn4K1XIFI2nChbuNGYHuBBZP_wRg6PWw5pdA&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.4692252,
+    "lng": 9.1953414,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJd8ROFKvGhkcRUf875a9G9lM",
+    "name": "Trattoria Milanese ✓",
+    "formatted_address": "Via Santa Marta, 11, 20123 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN3MtgEpjoP15hduEJC3QfWjReZYJPBzIwSz65X-U81wKpPtkfs1wOMPXlTyUx9j1C_i8TJePMziH_Ja25wwCYFCWANGbN6bAf-Xf_-WLvJF1alqxcEN9aZXYgXqegUu2u4e8VzsarYAZRIC3oYBCN5Xpet7FdlXjHq0XeICr-SBIidd0n_wW7J7zy84E5mKjb6y1w0V8GODx2ZvujaAWLcH34HiF4vubR28XlZWQ4MH5w8KFLPWgzC_ptzuUkpN6TNn6sHnG0TkscifS_PNyIoXJYT4e9cWSCpTuPB4OMTRLQ&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 45.4629116,
+    "lng": 9.1837802,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJJ0Ng-cXGhkcRAh0F8c1pcrs",
+    "name": "Osteria del Treno ✓",
+    "formatted_address": "Via S. Gregorio, 46, 20124 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0hHJSiZ0hvyKJLBmfG6sQBTKktI66xj6SJqgJgnfC_KxekX3TO4d8_mrljb1oCtHs0sWV_iq6rrd96OWMOU-1yUkSPq0YeXqri-ItBl5KFq5oVScRRpZx9eWZqkuwsAA_y9_F1t9cUNK3rS4KrKw7LBiOVPjkPhZrSCJVkFuR0hFFxvsC_G_H4bBySg4n1J00QSHffS8bWp1FyzSnbWtCGA5LukQt43q9qkkqpXpFBaZjYtxri6unZGn-eeACHR-ymW9Mqa-c-PaMxo1BrRP4jwJiI2RN0fMA3qu6dqIZMhA&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 45.4812735,
+    "lng": 9.2012182,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJiW43cQjEhkcRI2INhyQWJvw",
+    "name": "Trattoria Madonnina ✓",
+    "formatted_address": "Via Gentilino, 6, 20136 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0B_Hdp0RfsJJWJNRZQ6qud9mgeDx8_NvbgZP0Z5m6LhufTd4ViCIf9hkgJM2bH7LyUXCzEpUUhxPjZAx0EQ4zvejxjC8NzU5DegFJUcsJdGcGkZBdu-0av3nkJO5f_sr--Q74YlBIQvefb8_DgyrQ1oMZlLKUrylzlNUz7N2OKqUbqq6iGfw7duVEbH4hAplkf-_0D_fixyaF7ixs9HzCZhWWQLjbXs4GeAQP3hBrY9a5WdtNwvo3Zo0TRgfdrwyq3zGo5NsCUGQYPNi8haiPZdHsfcKZ5ai_tcbgDai37oA&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 45.4488889,
+    "lng": 9.1808333,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJM1BlBDTBhkcRh-rYgUDugBk",
+    "name": "Antica Trattoria della Pesa ✓",
+    "formatted_address": "Viale Pasubio, 10, 20154 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN1weql5tararZevjvk0736t6ZR3qmOTTgVQ02txtQS5uOp7crarx4jywszxpfYwqpDGglCUNLsocId0LOmRhpWWqKlcEJPIB1lGhNHgkxgpH6dndZlcnkOAO8ofKCUw5rO4kNjUDuDfQFAeuvNI_NJldFaBwF4xEdtpkWXdAnG84bM_vN36QZed1XgUJMJTCwbK0XUq9Y9iEVHhn5YMJtV3UZKdKxRedrkTmf8HvmFCWcc7JuY-mrMfG59DlcvmanXHZ6pf7y0_Jx0jQnjUCVohayaVtqw66tHDykk9Q5vBC5ASPTAoYvnRuXdxyQ6zeBWJRRfB44R8LE-jL7A7hNaMBlSOMuuIerUWeCvbeobUk8BCcg-42Aw7_1yydLP08i0Eq8KLHIH064VvOskPjgqWiHHstUX_-9Jmg5Tn1T9WVN8&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "cucina_tipica",
+    "lat": 45.4817604,
+    "lng": 9.184023500000002,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJ3f8Dy6XGhkcRbwud_cDLgW4",
+    "name": "NH Collection Milano President ✓",
+    "formatted_address": "Largo Augusto, 10, 20122 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN0QrWZ80yMRF0wTD_FtTXB7abVDEg8Qu43Om7JyfomyFc5GNcPfwee25fbynNm2ST2DoYMTDBEGJAFpT0y7QmCuiVwn2wvYbSIuE4VUjmIHDP8iQtk4vkYcxAPMi37r_2QYe84zBsvOOsu6ucGNqUiV3jpMWBPj-DeQiIpAC759BDGzBJC3hE5pDLIf-dQTSc7hMNc4kVRcZu9_YPgvVyej1_BjztvBk61VTDws9X1KcJhhf6QMWNhkMZ-XkBrqYRwzsKvMuqyGzIfDr-xdXMqBxTxIYCpn_kfQJJq93wUvZ460szlDglaBLQpQJKEYcvVqJ09KptF4f3pjoEVDJFxe3JUohcqjWj2HlmfWgN5PhA6x3cj5l-Z6IT-Z5fo8hdw8KqWTunK3KsVfbJgqRer0dKDP0NocMyAeRQeCaDDsBy5K&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.463112,
+    "lng": 9.197721999999999,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJS3qUE6zGhkcRzRDfJrTuWFE",
+    "name": "Bulgari Hotel Milan ✓",
+    "formatted_address": "Via Privata Fratelli Gabba, 7B, 20121 Milano MI, Italia",
+    "image": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=AcnlKN1CPV5_6vY_1QhTAR35B7cIg4aD1GPffidqQcPguKdl44JHH3dybD9D-viS27Z7vjsz-GyysbBvYTZZdzeL52u1K7-_Injx8DnjgrooMyvmPD2FUihF9iKUY4YliXvL8Yf84iDde8ASmdLH_5MUtS00CQZYdrkWlU-VgM-8GUaX-ImUv69_ScuEs4uC1WQPcKg2EioFj6vawPz9ntdtS36Obb0bugeQbEOu3bsGTWl7TQnwPIZEgR9WZUqSUkY7p1PLkW1S90a21g9NLBdRloi5ej96GEDT4KGTFgA11WJ8bg&key=AIzaSyC92HQzyCZ2QTTvAPuRSq0hCnpnWAXsfAk",
+    "category": "hotel",
+    "lat": 45.4698487,
+    "lng": 9.1895359,
+    "rating": 0.0,
+    "reviews_count": 0
+  }
+]

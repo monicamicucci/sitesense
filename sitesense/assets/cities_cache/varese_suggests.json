@@ -1,0 +1,123 @@
+[
+  {
+    "place_id": "ChIJ-_a-tGnoRxMRzWs68K-s92U",
+    "name": "JR Hotels Grande Albergo delle Nazioni Bari",
+    "formatted_address": "",
+    "image": "https://content.skyscnr.com/available/2224709092/2224709092_WxH.jpg",
+    "category": "hotel",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJVVUFH1noRxMRC17k7Jmd_Ow",
+    "name": "Hotel Excelsior Bari",
+    "formatted_address": "",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/12/1f/df/caption.jpg?w=700&h=700&s=1",
+    "category": "hotel",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJ7fU-kHESRxMR1vS_g9qN898",
+    "name": "Mercure Villa Romanazzi Carducci",
+    "formatted_address": "",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "hotel",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJURFXwTrvRxMRfyZJBVBpfY0",
+    "name": "Enoteca Vinarius De Pasquale",
+    "formatted_address": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQojJjs5MrN_S1dBv8SxlKxow8l0JAiDLCqJw&s",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJNwuU2rTpRxMR2luZ355zeSE",
+    "name": "Enoteca del Centro",
+    "formatted_address": "",
+    "image": "https://shop.enotecadelcentro.it/cdn/shop/files/Interni_5_1400x.jpg?v=1645870424",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJiaR7fmToRxMRNdnoxBowKT8",
+    "name": "La Cantina dello Zio",
+    "formatted_address": "",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/2c/da/ec/orecchiette-ai-frutti.jpg?w=900&h=500&s=1",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJ6-bRoi81RhMRTdc2lonm63A",
+    "name": "Lo Sfizio Divino | Enoteca - Wine shop con vino sfuso",
+    "formatted_address": "",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJQ1ikZrbpRxMRBK",
+    "name": "Enoteca Bar a Vin - Mostofiore",
+    "formatted_address": "",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "vini",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJndcOmW_pRxMRfNxFivXGCMo",
+    "name": "Antò Ristorante -- Cucina tipica pugliese -- Bari",
+    "formatted_address": "",
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ca/11/c1/la-nostra-sala-di-sera.jpg?w=900&h=500&s=1",
+    "category": "cucina_tipica",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJ71k2smboRxMR2ue3rwajtJ4",
+    "name": "MastroCiccio",
+    "formatted_address": "",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "cucina_tipica",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  },
+  {
+    "place_id": "ChIJ281Eq2boRxMRVJyrdBu7_oo",
+    "name": "La Tana del Polpo - Trattoria di Mare - Sede Storica",
+    "formatted_address": "",
+    "image": "https://img.restaurantguru.com/r389-Mastro-Ciccio-meals-2024-08.jpg",
+    "category": "cucina_tipica",
+    "lat": 41.1171,
+    "lng": 16.8719,
+    "rating": 0.0,
+    "reviews_count": 0
+  }
+]

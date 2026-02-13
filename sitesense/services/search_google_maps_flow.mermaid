@@ -1,0 +1,13 @@
+graph TD
+    A[Utente invia messaggio] --> B[GeminiService.chat riceve messaggio]
+    B --> C[Tool Client Gemini analizza il messaggio]
+    C --> D{Richiede search_google_maps?}
+    D -- Sì --> E[Tool Client esegue search_google_maps]
+    E --> F[google_maps_service.search_places viene chiamato]
+    F --> G[Risultati salvati separatamente - NON nella chat]
+    G --> H[Content Client Gemini riceve messaggio originale]
+    D -- No --> H
+    H --> I[Content Client usa Grounding per piatti/dolci/vini]
+    I --> J[Content Client genera HTML con informazioni culinarie]
+    J --> K[Risposta HTML finale restituita all'utente]
+    G --> L[Risultati mappa disponibili separatamente per UI]

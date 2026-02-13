@@ -1,0 +1,236 @@
+<!-- Contenuto profilo riutilizzabile -->
+
+<style>
+ @media (max-width: 558px) {
+   #profile-container {
+     padding-top: 80px !important;
+   }
+   #personal-info-grid {
+     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+   }
+ }
+</style>
+
+
+
+<div id="profile-container" class="w-full max-w-[1600px] mx-auto px-10 py-6 ">
+  <!-- Header card -->
+  <section class="rounded-5xl border border-gray-200 bg-white p-6 mb-6">
+    <h3 class="text-lg font-semibold mb-5">Profilo</h3>
+    <div class="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+      <div class="flex flex-col items-center w-full gap-6 xl:flex-row">
+        <div class="w-20 h-20 overflow-hidden border border-gray-200 rounded-full bg-gray-100">
+          {% set avatar = (user.profile_image if user and user.profile_image) or '/assets/user-variant1.png' %}
+          <img src="{{ avatar }}" alt="avatar" class="w-full h-full object-cover" />
+        </div>
+        <div class="order-3 xl:order-2">
+          <h4 class="mb-2 text-lg font-semibold text-center xl:text-left">
+            {{ (user.name or '') ~ (' ' ~ user.surname if user and user.surname) | trim if user else 'Utente' }}
+          </h4>
+          <div class="flex flex-col items-center gap-1 text-center xl:flex-row xl:gap-3 xl:text-left">
+            <p class="text-sm text-gray-500 break-all">{{ user.email if user and user.email else 'email non disponibile' }}</p>
+          </div>
+        </div>
+        <div class="flex items-center order-2 gap-2 grow xl:order-3 xl:justify-end">
+<a href="/area_riservata" class="flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50">Dashboard</a>
+          {% set is_auth = request.cookies.get('auth') == '1' %}
+          {% if is_auth %}
+<a href="/logout?next=/" class="flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50">Esci</a>
+          {% else %}
+<a href="/login?next=/area_riservata" class="flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Information -->
+  <section class="rounded-2xl border border-gray-200 bg-white p-6 mb-6 w-full">
+    <div class="flex items-start justify-between">
+      <h4 class="text-lg font-semibold">Informazioni personali</h4>
+      <button id="btn-edit-info" type="button" class="flex items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+        <span class="material-icons text-gray-600">edit</span>
+        Modifica
+      </button>
+    </div>
+    <div id="personal-info-grid" class="grid grid-cols-4 gap-5 mt-6 xl:gap-10 2xl:gap-x-12">
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Nome</p>
+        <p class="text-sm font-medium">{{ user.name or '—' }}</p>
+      </div>
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Cognome</p>
+        <p class="text-sm font-medium">{{ user.surname or '—' }}</p>
+      </div>
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Email</p>
+        <p class="text-sm font-medium break-all">{{ user.email or '—' }}</p>
+      </div>
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Registrato il</p>
+        <p class="text-sm font-medium">{{ (user.registration_date.strftime('%d/%m/%Y') if user and user.registration_date) or '—' }}</p>
+      </div>
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Telefono</p>
+        <p class="text-sm font-medium">{{ user.phone or '—' }}</p>
+      </div>
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Città</p>
+        <p class="text-sm font-medium">{{ (user.city_name or user.city) or '—' }}</p>
+      </div>
+      <div>
+        <p class="mb-1 text-xs text-gray-500">Paese</p>
+        <p class="text-sm font-medium">{{ user.country or '—' }}</p>
+      </div>
+      
+    </div>
+  </section>
+
+  
+
+  <!-- Modale: Informazioni personali -->
+  <div id="profile-info-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/50" data-modal-close></div>
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl rounded-2xl bg-white shadow-xl">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
+        <h5 class="text-base font-semibold">Modifica informazioni personali</h5>
+        <button type="button" class="rounded-md p-1 hover:bg-gray-100" data-modal-close>
+          <span class="material-icons text-gray-600">close</span>
+        </button>
+      </div>
+      <div class="px-5 py-4 space-y-4">
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="block text-sm text-gray-700 mb-1">Nome</label>
+            <input type="text" id="profile-name" value="{{ user.name or '' }}" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 mb-1">Cognome</label>
+            <input type="text" id="profile-surname" value="{{ user.surname or '' }}" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 mb-1">Email</label>
+            <input type="email" id="profile-email" value="{{ user.email or '' }}" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 mb-1">Telefono</label>
+            <input type="text" id="profile-phone" value="{{ user.phone or '' }}" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 mb-1">Città</label>
+            <input type="text" id="profile-city" value="{{ (user.city_name or user.city) or '' }}" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-700 mb-1">Paese</label>
+            <select id="profile-country" data-current-country="{{ user.country or '' }}" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"></select>
+          </div>
+          
+          <p class="text-xs text-gray-500">Registrato il: {{ (user.registration_date.strftime('%d/%m/%Y') if user and user.registration_date) or '—' }}</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-2 px-5 py-4 border-t border-gray-200">
+        <button type="button" class="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm" data-modal-close>Annulla</button>
+        <button type="button" class="rounded-md bg-[#0b2c26] text-white px-4 py-2 text-sm" id="save-info-modal">Salva</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale: Indirizzo -->
+  
+
+  <script>
+    (function() {
+      const qs = (sel) => document.querySelector(sel);
+      const qsa = (sel) => Array.from(document.querySelectorAll(sel));
+
+      const btnInfo = qs('#btn-edit-info');
+      const infoModal = qs('#profile-info-modal');
+
+      const openModal = (el) => { if (el) el.classList.remove('hidden'); };
+      const closeModal = (el) => { if (el) el.classList.add('hidden'); };
+
+      if (btnInfo && infoModal) {
+        btnInfo.addEventListener('click', () => openModal(infoModal));
+      }
+
+      qsa('[data-modal-close]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          closeModal(infoModal);
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal(infoModal);
+        }
+      });
+
+      // Salvataggio: invia al backend e aggiorna la UI
+      const saveInfo = qs('#save-info-modal');
+
+      // Popola elenco Paesi nel select
+      const countrySelect = qs('#profile-country');
+      if (countrySelect) {
+        const COUNTRIES = [
+          'Italia', 'Francia', 'Germania', 'Spagna', 'Regno Unito', 'Svizzera', 'Austria', 'Belgio', 'Paesi Bassi', 'Portogallo', 'Grecia',
+          'Svezia', 'Norvegia', 'Danimarca', 'Finlandia', 'Irlanda', 'Polonia', 'Ungheria', 'Romania', 'Bulgaria', 'Croazia', 'Slovenia',
+          'Slovacchia', 'Repubblica Ceca', 'Ucraina', 'Turchia', 'Russia',
+          'Stati Uniti', 'Canada', 'Messico', 'Brasile', 'Argentina', 'Cile', 'Perù', 'Colombia', 'Venezuela',
+          'Australia', 'Nuova Zelanda', 'Cina', 'Giappone', 'Corea del Sud', 'India', 'Indonesia', 'Malesia', 'Singapore', 'Thailandia', 'Vietnam',
+          'Marocco', 'Tunisia', 'Egitto', 'Sudafrica', 'Israele', 'Arabia Saudita', 'Emirati Arabi Uniti'
+        ];
+        const options = ['<option value="">Seleziona paese</option>']
+          .concat(COUNTRIES.map(c => `<option value="${c}">${c}</option>`))
+          .join('');
+        countrySelect.innerHTML = options;
+        const curr = countrySelect.getAttribute('data-current-country') || '';
+        if (curr) countrySelect.value = curr;
+      }
+
+      async function postUpdate(payload) {
+        try {
+          const res = await fetch('/api/update_profile', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          return await res.json();
+        } catch (e) { return { ok: false, error: e?.message || 'Errore di rete' }; }
+      }
+
+      if (saveInfo) {
+        saveInfo.addEventListener('click', async () => {
+          const name = qs('#profile-name')?.value || '';
+          const surname = qs('#profile-surname')?.value || '';
+          const email = qs('#profile-email')?.value || '';
+          const phone = qs('#profile-phone')?.value || '';
+          const city = qs('#profile-city')?.value || '';
+          const country = qs('#profile-country')?.value || '';
+
+          const result = await postUpdate({ section: 'info', name, surname, email, phone, city, country });
+          // Aggiorna UI se ok
+          if (result?.ok !== false) {
+            const map = [
+              { label: 'Nome', value: name },
+              { label: 'Cognome', value: surname },
+              { label: 'Email', value: email },
+              { label: 'Telefono', value: phone },
+              { label: 'Città', value: city },
+              { label: 'Paese', value: country },
+            ];
+            // Aggiorna campi visualizzati
+            map.forEach(({ label, value }) => {
+              const el = Array.from(document.querySelectorAll('section'))
+                .find(s => s.querySelector('h4')?.textContent?.includes('Informazioni personali'));
+              if (!el) return;
+              const blocks = Array.from(el.querySelectorAll('div > p:first-child'));
+              const target = blocks.find(p => p.textContent.trim() === label)?.nextElementSibling;
+              if (target) target.textContent = value || '—';
+            });
+          }
+          closeModal(infoModal);
+        });
+      }
+    })();
+  </script>
+</div>

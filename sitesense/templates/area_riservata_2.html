@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Area Riservata</title>
+
+  <link rel="icon" href="/dashboard/favicon.ico">
+  <link href="/dashboard/style.css" rel="stylesheet">
+
+  {{ dashboard_head|safe }}
+</head>
+
+<body>
+
+<div class="flex h-screen overflow-hidden">
+
+  {% if has_override_sidebar %}
+    {% include 'dashboard_overrides/sidebar.html' %}
+  {% else %}
+    {{ dashboard_sidebar|safe }}
+  {% endif %}
+
+  <!-- MAIN -->
+  <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+    <main {{ dashboard_body_attrs|safe }}>
+      {% if has_override_main %}
+        {% include 'dashboard_overrides/' ~ (dashboard_page or 'index.html') %}
+      {% else %}
+        {{ dashboard_body|safe }}
+      {% endif %}
+    </main>
+  </div>
+
+</div>
+
+<!-- ===============================
+     NAVIGATION FIX DEFINITIVO
+     =============================== -->
+<script>
+(function () {
+
+  /* ===============================
+     RISCRITTURA LINK ESISTENTI
+     =============================== */
+  function rewriteAllLinks() {
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      if (href.startsWith('/dashboard/') && href.endsWith('.html')) {
+        const page = href.replace('/dashboard/', '');
+        a.setAttribute(
+          'href',
+          '/area_riservata?dashboard_page=' + page
+        );
+      }
+    });
+  }
+
+  /* ===============================
+     INTERCETTA CLICK (ANTI REDIRECT)
+     =============================== */
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+
+    const href = a.getAttribute('href');
+    if (!href) return;
+
+    if (href.startsWith('/dashboard/') && href.endsWith('.html')) {
+      e.preventDefault();
+      const page = href.replace('/dashboard/', '');
+      window.location.href =
+        '/area_riservata?dashboard_page=' + page;
+    }
+  });
+
+  /* ===============================
+     TOGGLE SIDEBAR (href="#")
+     =============================== */
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('.menu-item.group');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (href !== '#' && href !== '') return;
+
+    const li = link.closest('li');
+    if (!li) return;
+
+    const dropdown =
+      li.querySelector('.menu-dropdown') ||
+      li.querySelector('ul') ||
+      li.querySelector('div');
+
+    if (!dropdown) return;
+
+    e.preventDefault();
+    dropdown.style.display =
+      dropdown.style.display === 'block'
+        ? 'none'
+        : 'block';
+  });
+
+  document.addEventListener('DOMContentLoaded', rewriteAllLinks);
+
+})();
+</script>
+
+</body>
+</html>
