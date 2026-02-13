@@ -1,12 +1,28 @@
 {
     "localita": "Bari",
     "queries": {
-        "Vini": [
-            "Vini Bari",
-            "Enoteca Bari"
+        "Cucina Tipica": [
+            "Ristoranti tipici Bari",
+            "Spaghetti all'Assassina Bari",
+            "Riso, Patate e Cozze Bari",
+            "Orecchiette con le Cime di Rapa Bari",
+            "Baccal\u00e0 in Umido Bari",
+            "Polpo alla Pignata Bari",
+            "Brasciole Bari",
+            "Focaccia Barese Bari"
         ],
-        "Cucina Tipica": "Cucina Tipica Bari",
-        "Dolci Tipici": "Dolci Tipici Bari",
+        "Vini": [
+            "Enoteca Bari",
+            "Negozi di vino Negroamaro Bari",
+            "Negozi di vino Primitivo Bari",
+            "Negozi di vino Nero di Troia Bari"
+        ],
+        "Dolci Tipici": [
+            "Pasticcerie tipiche Bari",
+            "Sospiri dolci Bari",
+            "Sporcamuss Bari",
+            "Biscotti di mandorla Bari"
+        ],
         "Hotel": "Hotel Bari"
     }
 }

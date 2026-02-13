@@ -1227,7 +1227,13 @@ function processAndDisplayContent(payload) {
       if (!isMapVisible) { mapWrapper.classList.add('hidden'); }
     }
     // Chat nascosta di default anche entrando direttamente nei risultati
-    window.__CHAT_TOGGLE_VISIBLE__ = true;
+    if(window.innerWidth <= 558){
+      window.__CHAT_TOGGLE_VISIBLE__ = false;
+    }else{
+      window.__CHAT_TOGGLE_VISIBLE__ = true;
+    }
+
+  
     try { ensureChatToggle(); } catch (e) {}
     try { updateChatToggleVisibility(); } catch (e) {}
     // Aggiorna visibilità pannello chat in base allo stato (risultati/caricamento)
