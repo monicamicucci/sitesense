@@ -154,7 +154,7 @@
     height: 70vh;
 
     border-radius: 16px 16px 0 0;
-    transform: translateY(calc(100% - 46px));
+    transform: translateY(100%);
     transition: transform 0.35s ease;
     }
 
@@ -704,9 +704,10 @@ body.results-visible {
      =============================== -->
 <div class="relative flex min-h-screen flex-col pl-24">
   <img
+    id="sidebar-initalya-logo"
     src="/assets/_logo-initalya-chiaro.svg"
     alt="Initalya"
-    class="sidebar-logo-toggle h-8 w-auto hidden max-[558px]:block fixed top-6 left-1/2 -translate-x-1/2 z-[100]"
+    class="sidebar-logo-toggle h-8 w-auto hidden max-[558px]:block absolute top-6 left-1/2 -translate-x-1/2 z-[100]"
     style="display:none;"
   />
 
